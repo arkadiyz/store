@@ -11,7 +11,7 @@ export function TableCell<T>({ cell }: TableCellProps<T>) {
       style={{
         border: '1px solid #d1d5db',
         padding: '12px',
-        textAlign: 'left',
+        textAlign: 'justify',
       }}
     >
       {flexRender(cell.column.columnDef.cell, cell.getContext())}

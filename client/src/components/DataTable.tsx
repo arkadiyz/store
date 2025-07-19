@@ -68,7 +68,7 @@ export function DataTable<T>({
 
       {/* Table */}
       <div className='table-container' style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #d1d5db' }}>
+        <table style={{ direction: 'rtl', width: '100%', borderCollapse: 'collapse', border: '1px solid #d1d5db' }}>
           <TableHeader headerGroups={table.getHeaderGroups()} enableSorting={enableSorting} />
           <TableBody rows={table.getRowModel().rows} onRowClick={onRowClick} />
         </table>

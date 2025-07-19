@@ -11,7 +11,18 @@ interface Product {
   marketDate: string;
 }
 
-export function UserTable() {
+export function Table() {
+  const handleEdit = (product: Product) => {
+    console.log('Edit product:', product);
+  };
+
+  const handleDelete = (product: Product) => {
+    console.log('Delete product:', product);
+    const userConfirmed = window.confirm(`האם אתה בטוח שברצונך למחוק את ${product.productName}?`);
+    if (userConfirmed) {
+    }
+  };
+
   // נתוני דוגמה
   const products: Product[] = [
     {
@@ -143,6 +154,25 @@ export function UserTable() {
       accessorKey: 'marketDate',
       header: 'תאריך שיווק המוצר',
       size: 100,
+    },
+    // עמודת Actions עם CSS classes
+    {
+      id: 'actions',
+      header: 'פעולות',
+      size: 120,
+      cell: ({ row }) => {
+        const product = row.original;
+        return (
+          <div className='action-buttons'>
+            <button onClick={() => handleEdit(product)} className='btn btn-edit' title='עריכה'>
+              ✏️
+            </button>
+            <button onClick={() => handleDelete(product)} className='btn btn-delete' title='מחיקה'>
+              🗑️
+            </button>
+          </div>
+        );
+      },
     },
   ];
 

@@ -1,4 +1,4 @@
-import { UserTable } from '../components/UserTable';
+import { Table } from '../components/Table';
 
 const HomePage = () => {
   return (
@@ -6,10 +6,9 @@ const HomePage = () => {
       <h1>Welcome to the Home Page</h1>
       <p>This is the main page of our application.</p>
 
-      <UserTable />
+      <Table />
     </div>
   );
 };
 
 export default HomePage;
-
