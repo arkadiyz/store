@@ -1,0 +1,25 @@
+#--logger.service.ts--| Sat, 19 Jul 2025 11:53:09 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:53:09 GMT - Info - ====================================  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:53:09 GMT - Info - Server is running on port: 5000  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:53:09 GMT - Info - /==================================/  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - 🔄 [object Object],[object Object],[object Object]   
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - ====================================  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - Server is running on port: 5000  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - /==================================/  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - 🔄 [{"id":1,"name":"ירק"},{"id":2,"name":"פרי"},{"id":3,"name":"גידולי שדה"}]   
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - ====================================  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - Server is running on port: 5000  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - /==================================/  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - 🔄 [{"id":1,"name":"ירק"},{"id":2,"name":"פרי"},{"id":3,"name":"גידולי שדה"}]   
+#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - ====================================  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - Server is running on port: 5000  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - /==================================/  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:57:32 GMT - Error - [getProducts] [object Object]  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:57:32 GMT - Info - [controller -> getProducts] undefined  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:58:29 GMT - Error - [getProducts] [object Object]  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:58:29 GMT - Info - [controller -> getProducts] undefined  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:58:30 GMT - Error - [getProducts] [object Object]  
+#--logger.service.ts--| Sat, 19 Jul 2025 11:58:30 GMT - Info - [controller -> getProducts] undefined  

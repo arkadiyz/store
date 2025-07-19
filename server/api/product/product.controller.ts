@@ -1,0 +1,36 @@
+import logger from '../../services/logger.service';
+import productService from './product.service';
+import { Request, Response } from 'express';
+
+// TODO: Make Function to fetch products from service file
+async function getProducts(req: Request, res: Response): Promise<void> {
+  try {
+    await productService.getProducts(req, res);
+    logger.info('[controller -> getProducts] ' + JSON.stringify(req.body));
+  } catch (error) {
+    logger.error('[controller -> getProducts] ' + error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
+
+// TODO: Make Function to save a product to service file
+async function saveProduct(req: Request, res: Response): Promise<void> {
+  try {
+    await productService.saveProduct(req, res);
+  } catch (error) {
+    logger.error('[controller -> saveProduct] ' + error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
+
+//TODO: Make Function to delete a product from service file
+async function deleteProduct(req: Request, res: Response): Promise<void> {
+  try {
+    await productService.deleteProduct(req, res);
+  } catch (error) {
+    logger.error('[controller ->] ' + error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
+
+export { getProducts, saveProduct, deleteProduct };
