@@ -23,3 +23,7 @@ export interface ProductFormData {
 export interface AppState {
   productType: Array<ProductType>;
 }
+
+export interface ErrorState {
+  errMessage: string | null;
+}
