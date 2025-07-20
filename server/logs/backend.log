@@ -1,25 +1,55 @@
-#--logger.service.ts--| Sat, 19 Jul 2025 11:53:09 GMT - Info - 🔄 Product types cached:3  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:53:09 GMT - Info - ====================================  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:53:09 GMT - Info - Server is running on port: 5000  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:53:09 GMT - Info - /==================================/  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - 🔄 Product types cached:3  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - 🔄 [object Object],[object Object],[object Object]   
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - ====================================  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - Server is running on port: 5000  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:17 GMT - Info - /==================================/  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - 🔄 Product types cached:3  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - 🔄 [{"id":1,"name":"ירק"},{"id":2,"name":"פרי"},{"id":3,"name":"גידולי שדה"}]   
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - ====================================  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - Server is running on port: 5000  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:55:38 GMT - Info - /==================================/  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - 🔄 Product types cached:3  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - 🔄 [{"id":1,"name":"ירק"},{"id":2,"name":"פרי"},{"id":3,"name":"גידולי שדה"}]   
-#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - ====================================  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - Server is running on port: 5000  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:57:24 GMT - Info - /==================================/  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:57:32 GMT - Error - [getProducts] [object Object]  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:57:32 GMT - Info - [controller -> getProducts] undefined  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:58:29 GMT - Error - [getProducts] [object Object]  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:58:29 GMT - Info - [controller -> getProducts] undefined  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:58:30 GMT - Error - [getProducts] [object Object]  
-#--logger.service.ts--| Sat, 19 Jul 2025 11:58:30 GMT - Info - [controller -> getProducts] undefined  
+#--logger.service.js--| Sun, 20 Jul 2025 09:46:38 GMT - Info - Successfully connected to database  
+#--logger.service.js--| Sun, 20 Jul 2025 09:46:38 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.js--| Sun, 20 Jul 2025 09:46:38 GMT - Info - ====================================  
+#--logger.service.js--| Sun, 20 Jul 2025 09:46:38 GMT - Info - Server is running on port: 5000  
+#--logger.service.js--| Sun, 20 Jul 2025 09:46:38 GMT - Info - Database connected successfully  
+#--logger.service.js--| Sun, 20 Jul 2025 09:46:38 GMT - Info - Cache loaded successfully  
+#--logger.service.js--| Sun, 20 Jul 2025 09:46:38 GMT - Info - /==================================/  
+#--logger.service.js--| Sun, 20 Jul 2025 09:51:57 GMT - Info - Successfully connected to database  
+#--logger.service.js--| Sun, 20 Jul 2025 09:51:57 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.js--| Sun, 20 Jul 2025 09:51:57 GMT - Info - ====================================  
+#--logger.service.js--| Sun, 20 Jul 2025 09:51:57 GMT - Info - Server is running on port: 5000  
+#--logger.service.js--| Sun, 20 Jul 2025 09:51:57 GMT - Info - Database connected successfully  
+#--logger.service.js--| Sun, 20 Jul 2025 09:51:57 GMT - Info - Cache loaded successfully  
+#--logger.service.js--| Sun, 20 Jul 2025 09:51:57 GMT - Info - /==================================/  
+#--logger.service.js--| Sun, 20 Jul 2025 09:52:08 GMT - Info - Successfully connected to database  
+#--logger.service.js--| Sun, 20 Jul 2025 09:52:08 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.js--| Sun, 20 Jul 2025 09:52:08 GMT - Info - ====================================  
+#--logger.service.js--| Sun, 20 Jul 2025 09:52:08 GMT - Info - Server is running on port: 5000  
+#--logger.service.js--| Sun, 20 Jul 2025 09:52:08 GMT - Info - Database connected successfully  
+#--logger.service.js--| Sun, 20 Jul 2025 09:52:08 GMT - Info - Cache loaded successfully  
+#--logger.service.js--| Sun, 20 Jul 2025 09:52:08 GMT - Info - /==================================/  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:07 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:07 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:09 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:09 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:12 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:12 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:21 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:21 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:33 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:57:33 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:38 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:38 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:41 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:41 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:46 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:46 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:48 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:48 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:54 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 09:58:54 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 10:00:01 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:00:01 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 10:00:41 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:00:41 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 10:00:49 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:00:49 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 10:00:53 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:00:53 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 10:01:02 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:01:02 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 10:01:04 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:01:04 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  
+#--logger.service.js--| Sun, 20 Jul 2025 10:01:12 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:01:12 GMT - Info - [controller -> getProductTypes --> ] Fetching product types[object Object],[object Object],[object Object]  

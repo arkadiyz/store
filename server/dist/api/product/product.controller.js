@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getProducts = getProducts;
 exports.saveProduct = saveProduct;
 exports.deleteProduct = deleteProduct;
+exports.getProductTypes = getProductTypes;
 const logger_service_1 = __importDefault(require("../../services/logger.service"));
 const product_service_1 = __importDefault(require("./product.service"));
 // TODO: Make Function to fetch products from service file
@@ -50,6 +51,20 @@ function deleteProduct(req, res) {
         }
         catch (error) {
             logger_service_1.default.error('[controller ->] ' + error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    });
+}
+function getProductTypes(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            logger_service_1.default.info('[controller -> getProductTypes] Fetching product types');
+            const productTypes = yield product_service_1.default.getProductTypes();
+            logger_service_1.default.info('[controller -> getProductTypes --> ] Fetching product types' + productTypes);
+            res.json(productTypes);
+        }
+        catch (error) {
+            logger_service_1.default.error('[controller -> getProductTypes] ' + error);
             res.status(500).json({ error: 'Internal Server Error' });
         }
     });

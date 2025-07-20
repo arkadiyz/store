@@ -34,7 +34,9 @@ async function deleteProduct(req: Request, res: Response): Promise<void> {
 }
 async function getProductTypes(req: Request, res: Response): Promise<void> {
   try {
+    logger.info('[controller -> getProductTypes] Fetching product types');
     const productTypes = await productService.getProductTypes();
+    logger.info('[controller -> getProductTypes --> ] Fetching product types' + productTypes);
     res.json(productTypes);
   } catch (error) {
     logger.error('[controller -> getProductTypes] ' + error);

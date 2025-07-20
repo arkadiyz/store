@@ -5,6 +5,9 @@ import { AppDispatch, RootState } from './redux/store';
 import { useDispatch } from 'react-redux';
 import { setLoading } from './redux/slices/loaderSlice';
 import { useSelector } from 'react-redux';
+import { ProductType } from './types/Product';
+import { getProductTypes } from './services/net.service';
+import { setProductTypes } from './redux/slices/appSlice';
 
 function App() {
   const { productType } = useSelector((state: RootState) => state.app);
@@ -17,8 +20,8 @@ function App() {
   const getAllProductTypes = async () => {
     try {
       dispatch(setLoading(true));
-      // const productType: ProductType[] = await getProductTypes();
-      // dispatch(setProductTypes(productType));
+      const productType = await getProductTypes();
+      dispatch(setProductTypes(productType));
     } catch (error) {
     } finally {
       dispatch(setLoading(false));

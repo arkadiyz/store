@@ -5,17 +5,14 @@ import cookieParser from 'cookie-parser';
 import http from 'http';
 import dotenv from 'dotenv';
 import logger from './services/logger.service';
-import { PrismaClient } from '@prisma/client';
-import { getProductTypesFromCache, loadProductTypesToCache } from './services/cache.service';
-
-// import db from './services/db.service';
+import { connectDB } from './services/db.service';
+import { loadProductTypesToCache } from './services/cache.service';
 
 // import authRoutes from './api/auth/auth.routes';
 import productRoutes from './api/product/product.routes';
-import loggerService from './services/logger.service';
 
 dotenv.config();
-const prisma = new PrismaClient();
+
 const app: Express = express();
 const server = http.createServer(app);
 
@@ -34,28 +31,30 @@ if (process.env.NODE_ENV === 'prodaction') {
 }
 
 // Routes
-app.get('/', async (req, res) => {
-  // res.send('Welcome to the API');
-  const productTypes = await getProductTypesFromCache();
-
-  // const products = await prisma.product.findMany();
-
-  res.json(productTypes);
-});
-
 app.use('/api/product', productRoutes);
 
+// Server start
+const port = process.env.PORT || 3030;
+
 async function startServer() {
-  await loadProductTypesToCache(); // פעולה אסינכרונית
-  const productTypes = await getProductTypesFromCache();
-  loggerService.info(`🔄 ${JSON.stringify(productTypes)} `);
-  // Server start
-  const port = process.env.PORT || 5000;
-  server.listen(port, () => {
-    logger.info('====================================');
-    logger.info(`Server is running on port: ${port}`);
-    logger.info('/==================================/');
-  });
+  try {
+    // התחברות למסד הנתונים
+    await connectDB();
+
+    // טעינת נתונים לקאש
+    await loadProductTypesToCache();
+
+    server.listen(port, () => {
+      logger.info('====================================');
+      logger.info(`Server is running on port: ${port}`);
+      logger.info('Database connected successfully');
+      logger.info('Cache loaded successfully');
+      logger.info('/==================================/');
+    });
+  } catch (error) {
+    logger.error('Failed to start server: ' + error);
+    process.exit(1);
+  }
 }
 
 startServer();

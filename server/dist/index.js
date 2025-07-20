@@ -19,14 +19,11 @@ const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const http_1 = __importDefault(require("http"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const logger_service_1 = __importDefault(require("./services/logger.service"));
-const client_1 = require("@prisma/client");
+const db_service_1 = require("./services/db.service");
 const cache_service_1 = require("./services/cache.service");
-// import db from './services/db.service';
 // import authRoutes from './api/auth/auth.routes';
 const product_routes_1 = __importDefault(require("./api/product/product.routes"));
-const logger_service_2 = __importDefault(require("./services/logger.service"));
 dotenv_1.default.config();
-const prisma = new client_1.PrismaClient();
 const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
 // Middlewares
@@ -43,25 +40,28 @@ else {
     app.use((0, cors_1.default)(corsOptions));
 }
 // Routes
-app.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // res.send('Welcome to the API');
-    const productTypes = yield (0, cache_service_1.getProductTypesFromCache)();
-    // const products = await prisma.product.findMany();
-    res.json(productTypes);
-}));
 app.use('/api/product', product_routes_1.default);
+// Server start
+const port = process.env.PORT || 3030;
 function startServer() {
     return __awaiter(this, void 0, void 0, function* () {
-        yield (0, cache_service_1.loadProductTypesToCache)(); // פעולה אסינכרונית
-        const productTypes = yield (0, cache_service_1.getProductTypesFromCache)();
-        logger_service_2.default.info(`🔄 ${JSON.stringify(productTypes)} `);
-        // Server start
-        const port = process.env.PORT || 5000;
-        server.listen(port, () => {
-            logger_service_1.default.info('====================================');
-            logger_service_1.default.info(`Server is running on port: ${port}`);
-            logger_service_1.default.info('/==================================/');
-        });
+        try {
+            // התחברות למסד הנתונים
+            yield (0, db_service_1.connectDB)();
+            // טעינת נתונים לקאש
+            yield (0, cache_service_1.loadProductTypesToCache)();
+            server.listen(port, () => {
+                logger_service_1.default.info('====================================');
+                logger_service_1.default.info(`Server is running on port: ${port}`);
+                logger_service_1.default.info('Database connected successfully');
+                logger_service_1.default.info('Cache loaded successfully');
+                logger_service_1.default.info('/==================================/');
+            });
+        }
+        catch (error) {
+            logger_service_1.default.error('Failed to start server: ' + error);
+            process.exit(1);
+        }
     });
 }
 startServer();
