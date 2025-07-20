@@ -27,3 +27,6 @@ export interface AppState {
 export interface ErrorState {
   errMessage: string | null;
 }
+export interface LoaderState {
+  isLoading: boolean;
+}

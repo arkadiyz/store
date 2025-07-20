@@ -1,4 +1,5 @@
-import Axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import Axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { handleError } from './error.service';
 
 export const RESPONSE_TYPE_BLOB = 'blob';
 const CONTENT_TYPE = 'Content-Type';
@@ -60,8 +61,9 @@ async function ajax<T>(
     }
 
     return res.data;
-  } catch (err) {
-    // handleError(err);
+  } catch (err: unknown) {
+    const axiosError = err as AxiosError;
+    handleError(axiosError);
     throw err;
   }
 }
