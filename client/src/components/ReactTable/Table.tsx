@@ -1,30 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DataTable } from './DataTable';
 import { ColumnDef } from '@tanstack/react-table';
-
-interface Product {
-  id: number;
-  productName: string;
-  sku: string;
-  productDescription: string;
-  productType: string;
-  marketDate: string;
-}
+import { Modal } from '../Modal';
+import { ProductForm } from '../ProductForm';
+import { Product, ProductFormData } from '../../types/Product';
 
 export function Table() {
-  const handleEdit = (product: Product) => {
-    console.log('Edit product:', product);
-  };
-
-  const handleDelete = (product: Product) => {
-    console.log('Delete product:', product);
-    const userConfirmed = window.confirm(`האם אתה בטוח שברצונך למחוק את ${product.productName}?`);
-    if (userConfirmed) {
-    }
-  };
-
-  // נתוני דוגמה
-  const products: Product[] = [
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editingProduct, setEditingProduct] = useState<Product | undefined>(undefined);
+  const [products, setProducts] = useState<Product[]>([
     {
       id: 1,
       productName: 'מלפפון',
@@ -121,14 +105,48 @@ export function Table() {
       productType: 'פרי',
       marketDate: '2025-07-16',
     },
-  ];
+  ]);
 
-  // הגדרת העמודות
+  const handleAdd = () => {
+    setEditingProduct(undefined);
+    setIsModalOpen(true);
+  };
+
+  const handleEdit = (product: Product) => {
+    setEditingProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const handleDelete = (product: Product) => {
+    const userConfirmed = window.confirm(`האם אתה בטוח שברצונך למחוק את ${product.productName}?`);
+    if (userConfirmed) {
+      setProducts((prev) => prev.filter((p) => p.id !== product.id));
+    }
+  };
+
+  const handleFormSubmit = (productData: ProductFormData) => {
+    if (editingProduct) {
+      // עריכת מוצר קיים
+      setProducts((prev) => prev.map((p) => (p.id === editingProduct.id ? { ...productData, id: editingProduct.id } : p)));
+    } else {
+      // הוספת מוצר חדש
+      const newId = Math.max(...products.map((p) => p.id)) + 1;
+      setProducts((prev) => [...prev, { ...productData, id: newId }]);
+    }
+    setIsModalOpen(false);
+    setEditingProduct(undefined);
+  };
+
+  const handleFormCancel = () => {
+    setIsModalOpen(false);
+    setEditingProduct(undefined);
+  };
+
   const columns: ColumnDef<Product>[] = [
     {
       accessorKey: 'id',
       header: 'מזהה',
-      size: 80, // TODO:להגדיל אחרי זה
+      size: 80,
     },
     {
       accessorKey: 'productName',
@@ -143,7 +161,7 @@ export function Table() {
     {
       accessorKey: 'productDescription',
       header: 'תיאור מוצר',
-      size: 100, // TODO: להגדיל אחרי זה
+      size: 100,
     },
     {
       accessorKey: 'productType',
@@ -155,7 +173,6 @@ export function Table() {
       header: 'תאריך שיווק המוצר',
       size: 100,
     },
-    // עמודת Actions עם CSS classes
     {
       id: 'actions',
       header: 'פעולות',
@@ -178,8 +195,14 @@ export function Table() {
 
   return (
     <div style={{ padding: '24px' }}>
-      <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', textAlign: 'right' }}>טבלת משתמשים</h1>
-      <p style={{ marginBottom: '24px', color: '#6b7280', textAlign: 'right' }}>ניהול משתמשים במערכת - ניתן לחפש, למיין ולעבור בין דפים</p>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: 'bold', margin: 0 }}>טבלת מוצרים</h1>
+        <button onClick={handleAdd} className='btn btn-add' title='הוסף מוצר חדש'>
+          ➕ הוסף מוצר
+        </button>
+      </div>
+
+      <p style={{ marginBottom: '24px', color: '#6b7280', textAlign: 'right' }}>ניהול מוצרים במערכת - ניתן לחפש, למיין ולעבור בין דפים</p>
 
       <DataTable
         data={products}
@@ -188,9 +211,12 @@ export function Table() {
         enableFiltering={true}
         enablePagination={true}
         pageSize={5}
-        // onRowClick={handleRowClick}
         className='user-table'
       />
+
+      <Modal isOpen={isModalOpen} onClose={handleFormCancel} title={editingProduct ? 'עריכת מוצר' : 'הוספת מוצר חדש'}>
+        <ProductForm product={editingProduct} onSubmit={handleFormSubmit} onCancel={handleFormCancel} />
+      </Modal>
     </div>
   );
 }
