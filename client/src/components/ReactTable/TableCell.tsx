@@ -6,18 +6,5 @@ interface TableCellProps<T> {
 }
 
 export function TableCell<T>({ cell }: TableCellProps<T>) {
-  return (
-    <td
-      style={{
-        border: '1px solid #444',
-        padding: '12px',
-        textAlign: 'center',
-        color: 'white',
-        backgroundColor: '#1a1a1a',
-        fontSize: '14px',
-      }}
-    >
-      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-    </td>
-  );
+  return <td className='table-cell'>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>;
 }

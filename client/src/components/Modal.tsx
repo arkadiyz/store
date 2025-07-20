@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import './Modal.css';
 
 interface ModalProps {
   isOpen: boolean;
@@ -33,7 +34,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }
     <div className='modal-overlay' onClick={onClose}>
       <div className='modal-content' onClick={(e) => e.stopPropagation()}>
         <div className='modal-header'>
-          <h2>{title}</h2>
+          <h2 className='modal-title'>{title}</h2>
           <button className='modal-close' onClick={onClose}>
             ✕
           </button>

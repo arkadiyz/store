@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Product, ProductFormData, ProductType } from '../types/Product';
 import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
+import './ProductForm.css';
 
 interface ProductFormProps {
   product?: Product;
@@ -78,98 +79,107 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
     }
   };
 
-  // const productTypes = ['ירק', 'פרי', 'גידולי שדה', 'דגנים', 'קטניות'];
-  console.log('Product Types:', productTypes);
-  console.log('Product Types:Array.isArray(productTypes) = ', Array.isArray(productTypes));
   return (
-    <form onSubmit={handleSubmit} className='product-form'>
-      <div className='form-row'>
-        <div className='form-group'>
-          <label htmlFor='productName'>שם המוצר *</label>
-          <input
-            type='text'
-            id='productName'
-            name='productName'
-            value={formData.productName}
+    <div className='product-form-container'>
+      <form onSubmit={handleSubmit}>
+        <div className='product-form-grid'>
+          <div>
+            <label htmlFor='productName' className='product-form-label'>
+              שם המוצר *
+            </label>
+            <input
+              type='text'
+              id='productName'
+              name='productName'
+              value={formData.productName}
+              onChange={handleChange}
+              className={`product-form-input ${errors.productName ? 'error' : ''}`}
+              placeholder='הכנס שם מוצר'
+            />
+            {errors.productName && <span className='product-form-error'>{errors.productName}</span>}
+          </div>
+
+          <div>
+            <label htmlFor='sku' className='product-form-label'>
+              מק"ט *
+            </label>
+            <input
+              type='text'
+              id='sku'
+              name='sku'
+              value={formData.sku}
+              onChange={handleChange}
+              className={`product-form-input ${errors.sku ? 'error' : ''}`}
+              placeholder='הכנס מק״ט'
+            />
+            {errors.sku && <span className='product-form-error'>{errors.sku}</span>}
+          </div>
+        </div>
+
+        <div className='product-form-group'>
+          <label htmlFor='productDescription' className='product-form-label'>
+            תיאור המוצר *
+          </label>
+          <textarea
+            id='productDescription'
+            name='productDescription'
+            value={formData.productDescription}
             onChange={handleChange}
-            className={errors.productName ? 'error' : ''}
-            placeholder='הכנס שם מוצר'
+            className={`product-form-textarea ${errors.productDescription ? 'error' : ''}`}
+            placeholder='הכנס תיאור מפורט של המוצר'
+            rows={3}
           />
-          {errors.productName && <span className='error-message'>{errors.productName}</span>}
+          {errors.productDescription && <span className='product-form-error'>{errors.productDescription}</span>}
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='sku'>מק"ט *</label>
-          <input
-            type='text'
-            id='sku'
-            name='sku'
-            value={formData.sku}
-            onChange={handleChange}
-            className={errors.sku ? 'error' : ''}
-            placeholder='הכנס מק״ט'
-          />
-          {errors.sku && <span className='error-message'>{errors.sku}</span>}
-        </div>
-      </div>
+        <div className='product-form-grid'>
+          <div>
+            <label htmlFor='productType' className='product-form-label'>
+              סוג המוצר *
+            </label>
+            <select
+              id='productType'
+              name='productType'
+              value={formData.productType}
+              onChange={handleChange}
+              className={`product-form-select ${errors.productType ? 'error' : ''}`}
+            >
+              <option value=''>בחר סוג מוצר</option>
+              {Array.isArray(productTypes) &&
+                productTypes.map((type: ProductType) => (
+                  <option key={type.id} value={type.name}>
+                    {type.id} - {type.name}
+                  </option>
+                ))}
+            </select>
+            {errors.productType && <span className='product-form-error'>{errors.productType}</span>}
+          </div>
 
-      <div className='form-group'>
-        <label htmlFor='productDescription'>תיאור המוצר *</label>
-        <textarea
-          id='productDescription'
-          name='productDescription'
-          value={formData.productDescription}
-          onChange={handleChange}
-          className={errors.productDescription ? 'error' : ''}
-          placeholder='הכנס תיאור מפורט של המוצר'
-          rows={3}
-        />
-        {errors.productDescription && <span className='error-message'>{errors.productDescription}</span>}
-      </div>
-
-      <div className='form-row'>
-        <div className='form-group'>
-          <label htmlFor='productType'>סוג המוצר *</label>
-          <select
-            id='productType'
-            name='productType'
-            value={formData.productType}
-            onChange={handleChange}
-            className={errors.productType ? 'error' : ''}
-          >
-            <option value=''>בחר סוג מוצר</option>
-            {Array.isArray(productTypes) &&
-              productTypes.map((type: ProductType) => (
-                <option key={type.id} value={type.name}>
-                  {type.id} - {type.name}
-                </option>
-              ))}
-          </select>
-          {errors.productType && <span className='error-message'>{errors.productType}</span>}
+          <div>
+            <label htmlFor='marketDate' className='product-form-label'>
+              תאריך שיווק *
+            </label>
+            <input
+              type='date'
+              id='marketDate'
+              name='marketDate'
+              value={formData.marketDate}
+              onChange={handleChange}
+              className={`product-form-input ${errors.marketDate ? 'error' : ''}`}
+            />
+            {errors.marketDate && <span className='product-form-error'>{errors.marketDate}</span>}
+          </div>
         </div>
 
-        <div className='form-group'>
-          <label htmlFor='marketDate'>תאריך שיווק *</label>
-          <input
-            type='date'
-            id='marketDate'
-            name='marketDate'
-            value={formData.marketDate}
-            onChange={handleChange}
-            className={errors.marketDate ? 'error' : ''}
-          />
-          {errors.marketDate && <span className='error-message'>{errors.marketDate}</span>}
+        <div className='product-form-actions'>
+          <button type='button' onClick={onCancel} className='product-form-button cancel'>
+            ביטול
+          </button>
+          <button type='submit' className='product-form-button primary'>
+            {product ? 'עדכן מוצר' : 'הוסף מוצר'}
+          </button>
         </div>
-      </div>
-
-      <div className='form-actions'>
-        <button type='button' onClick={onCancel} className='btn btn-cancel'>
-          ביטול
-        </button>
-        <button type='submit' className='btn btn-primary'>
-          {product ? 'עדכן מוצר' : 'הוסף מוצר'}
-        </button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };

@@ -1,17 +1,11 @@
 import { Table } from '../components/ReactTable/Table';
+import './HomePage.css';
 
 const HomePage = () => {
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        backgroundColor: '#1a1a1a',
-        color: 'white',
-        fontFamily: 'Arial, sans-serif',
-      }}
-    >
+    <div className='home-page'>
       {/* Main Content */}
-      <main style={{ padding: '40px' }}>
+      <main className='home-main'>
         <Table />
       </main>
     </div>

@@ -4,6 +4,7 @@ import { ColumnDef } from '@tanstack/react-table';
 import { Modal } from '../Modal';
 import { ProductForm } from '../ProductForm';
 import { Product, ProductFormData } from '../../types/Product';
+import './Table.css';
 
 export function Table() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -175,33 +176,11 @@ export function Table() {
       cell: ({ row }) => {
         const product = row.original;
         return (
-          <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
-            <button
-              onClick={() => handleEdit(product)}
-              style={{
-                backgroundColor: '#8b5cf6',
-                color: 'white',
-                border: 'none',
-                padding: '6px 12px',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                fontSize: '12px',
-              }}
-            >
+          <div className='action-buttons'>
+            <button onClick={() => handleEdit(product)} className='btn btn-edit'>
               עריכה
             </button>
-            <button
-              onClick={() => handleDelete(product)}
-              style={{
-                backgroundColor: '#ef4444',
-                color: 'white',
-                border: 'none',
-                padding: '6px 12px',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                fontSize: '12px',
-              }}
-            >
+            <button onClick={() => handleDelete(product)} className='btn btn-delete'>
               מחיקה
             </button>
           </div>
@@ -211,97 +190,26 @@ export function Table() {
   ];
 
   return (
-    <div
-      style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        backgroundColor: '#1a1a1a',
-        color: 'white',
-      }}
-    >
+    <div className='table-container'>
       {/* Page Title */}
-      <div
-        style={{
-          textAlign: 'center',
-          marginBottom: '40px',
-        }}
-      >
-        <h1
-          style={{
-            fontSize: '32px',
-            fontWeight: 'bold',
-            margin: '0 0 8px 0',
-            borderBottom: '3px solid #3b82f6',
-            display: 'inline-block',
-            paddingBottom: '8px',
-          }}
-        >
-          ניהול מוצרים
-        </h1>
+      <div className='table-title'>
+        <h1>ניהול מוצרים</h1>
       </div>
 
       {/* Search and Add Section */}
-      <div
-        style={{
-          backgroundColor: '#2d2d2d',
-          padding: '24px',
-          borderRadius: '12px',
-          border: '2px solid #3b82f6',
-          marginBottom: '24px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            gap: '16px',
-            alignItems: 'center',
-            marginBottom: '24px',
-            flexWrap: 'wrap',
-          }}
-        >
-          <input
-            type='text'
-            placeholder='חיפוש לפי שם מוצר'
-            style={{
-              flex: 1,
-              minWidth: '300px',
-              padding: '12px 16px',
-              backgroundColor: '#3d3d3d',
-              border: '1px solid #555',
-              borderRadius: '8px',
-              color: 'white',
-              fontSize: '14px',
-            }}
-          />
-          <div style={{ marginRight: 'auto' }}>
-            <label style={{ marginRight: '8px', fontSize: '14px' }}>ביטול</label>
+      <div className='table-controls'>
+        <div className='table-search-row'>
+          <input type='text' placeholder='חיפוש לפי שם מוצר' className='table-search-input' />
+          <div className='table-cancel-label'>
+            <label>ביטול</label>
           </div>
-          <button
-            onClick={handleAdd}
-            style={{
-              backgroundColor: '#8b5cf6',
-              color: 'white',
-              border: 'none',
-              padding: '12px 24px',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              fontSize: '14px',
-              fontWeight: 'bold',
-            }}
-          >
+          <button onClick={handleAdd} className='table-add-button'>
             הוסף מוצר חדש
           </button>
         </div>
 
         {/* Table Container */}
-        <div
-          style={{
-            backgroundColor: '#1a1a1a',
-            borderRadius: '8px',
-            overflow: 'hidden',
-            border: '1px solid #444',
-          }}
-        >
+        <div className='table-wrapper'>
           <DataTable
             data={products}
             columns={columns}

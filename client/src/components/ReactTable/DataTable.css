@@ -1,0 +1,129 @@
+/* DataTable.css */
+.data-table {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.data-table table {
+  direction: rtl;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1a1a1a;
+}
+
+/* Table Header Styles */
+.table-header-cell {
+  border: 1px solid #444;
+  padding: 16px 12px;
+  text-align: center;
+  background-color: #2d2d2d;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.table-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.table-sort-icon {
+  color: #3b82f6;
+}
+
+/* Table Body Styles */
+.table-row {
+  background-color: #1a1a1a;
+  transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+  background-color: #2d2d2d;
+}
+
+.table-cell {
+  border: 1px solid #444;
+  padding: 12px;
+  text-align: center;
+  color: white;
+  background-color: #1a1a1a;
+  font-size: 14px;
+}
+
+/* Pagination Styles */
+.table-pagination {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  padding: 16px;
+  border-radius: 8px;
+  color: white;
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-button {
+  padding: 8px 12px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #3d3d3d;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #4b5563;
+}
+
+.pagination-button:disabled {
+  background-color: #2d2d2d;
+  color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pagination-text {
+  font-size: 14px;
+  color: #d1d5db;
+}
+
+.pagination-text strong {
+  color: #3b82f6;
+}
+
+.pagination-select {
+  padding: 8px 12px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background-color: #3d3d3d;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pagination-select option {
+  background-color: #3d3d3d;
+  color: white;
+}

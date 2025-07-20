@@ -12,6 +12,7 @@ import {
 import { TableHeader } from './TableHeader';
 import { TableBody } from './TableBody';
 import { TablePagination } from './TablePagination';
+import './DataTable.css';
 
 interface DataTableProps<T> {
   data: T[];
@@ -61,23 +62,10 @@ export function DataTable<T>({
   });
 
   return (
-    <div
-      className={`data-table ${className}`}
-      style={{
-        backgroundColor: '#1a1a1a',
-        color: 'white',
-      }}
-    >
+    <div className={`data-table ${className}`}>
       {/* Table */}
-      <div className='table-container' style={{ overflowX: 'auto' }}>
-        <table
-          style={{
-            direction: 'rtl',
-            width: '100%',
-            borderCollapse: 'collapse',
-            backgroundColor: '#1a1a1a',
-          }}
-        >
+      <div className='table-container'>
+        <table>
           <TableHeader headerGroups={table.getHeaderGroups()} enableSorting={enableSorting} />
           <TableBody rows={table.getRowModel().rows} onRowClick={onRowClick} />
         </table>
