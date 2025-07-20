@@ -37,9 +37,9 @@ export type PageStatus = {
 };
 
 export type ProductsResponse = {
-  pageCount: number;
-  pageNum: number;
+  pageCount?: number;
+  pageNum?: number;
   products: Array<Product>;
-  totalPages: number;
-  totalProducts: number;
+  totalPages?: number;
+  totalProducts?: number;
 };

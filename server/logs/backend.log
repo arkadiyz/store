@@ -74,3 +74,71 @@
 #--logger.service.ts--| Sun, 20 Jul 2025 18:01:41 GMT - Info - typeof products: object  
 #--logger.service.ts--| Sun, 20 Jul 2025 18:01:41 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
 #--logger.service.ts--| Sun, 20 Jul 2025 18:01:41 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:25 GMT - Info - Successfully connected to database  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:25 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:25 GMT - Info - ====================================  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:25 GMT - Info - Server is running on port: 5000  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:25 GMT - Info - Database connected successfully  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:25 GMT - Info - Cache loaded successfully  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:25 GMT - Info - /==================================/  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:33 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:33 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:33 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:08:33 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:19 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:19 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:19 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:19 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:28 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:28 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:28 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:28 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:31 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:31 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:31 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:31 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:43 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:43 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:43 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:09:43 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:10:21 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:10:21 GMT - Info - [controller -> searchProducts] Search term: שלום  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:10:21 GMT - Info - Searching products with term: שלום  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:10:21 GMT - Info - Search completed: found 3 products  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:10:21 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:10:55 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:10:55 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:10:55 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:10:55 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:11:44 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:11:44 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:11:44 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:11:44 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:11:45 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:11:45 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:11:45 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:11:45 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:15:06 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:15:06 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:15:06 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:15:06 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:15:47 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:15:47 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:15:47 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:15:47 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:39 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:41 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:41 GMT - Info - [controller -> searchProducts] Search term: של  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:41 GMT - Info - Searching products with term: של  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:41 GMT - Info - Search completed: found 3 products  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:41 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:42 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:42 GMT - Info - [controller -> searchProducts] Search term: שלו  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:42 GMT - Info - Searching products with term: שלו  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:42 GMT - Info - Search completed: found 3 products  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:42 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:43 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:43 GMT - Info - [controller -> searchProducts] Search term: שלום  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:43 GMT - Info - Searching products with term: שלום  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:43 GMT - Info - Search completed: found 3 products  
+#--logger.service.ts--| Sun, 20 Jul 2025 18:16:43 GMT - Info - [controller -> searchProducts] Search process completed  

@@ -10,6 +10,7 @@ import { AppDispatch, RootState } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { deleteProduct, getProducts, saveProduct } from '../../services/net.service';
 import { formatDate, getNameById } from '../../services/utils';
+import { SearchAutoComplete } from '../SearchAutoComplete';
 
 export function Table() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,6 +51,11 @@ export function Table() {
       deleteProduct(product.id);
       setProducts((prev) => prev.filter((p) => p.id !== product.id));
     }
+  };
+
+  const handleProductSearch = (product: Product) => {
+    console.log('Selected product:', product);
+
   };
 
   const handleFormSubmit = async (productData: ProductFormData) => {
@@ -148,9 +154,8 @@ export function Table() {
       {/* Search and Add Section */}
       <div className='table-controls'>
         <div className='table-search-row'>
-          <input type='text' placeholder='חיפוש לפי שם מוצר' className='table-search-input' />
-          <div className='table-cancel-label'>
-            <label>ביטול</label>
+          <div className='table-search'>
+            <SearchAutoComplete onProductSelect={handleProductSearch} placeholder='חפש מוצר לפי שם...' />
           </div>
           <button onClick={handleAdd} className='table-add-button'>
             הוסף מוצר חדש

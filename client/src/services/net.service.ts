@@ -61,7 +61,7 @@ export async function deleteProduct(productId: number) {
 
 export async function searchProducts(testSearch: string) {
   try {
-    const res = await httpService.get(`/api/product/search/${testSearch}`);
+    const res = await httpService.get<ProductsResponse>(`/api/product/search/${testSearch}`);
     return res;
   } catch (err) {
     throw err;

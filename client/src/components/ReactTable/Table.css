@@ -85,3 +85,9 @@
   overflow: hidden;
   border: 1px solid #444;
 }
+
+.table-search {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
