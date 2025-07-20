@@ -44,4 +44,18 @@ async function getProductTypes(req: Request, res: Response): Promise<void> {
   }
 }
 
-export { getProducts, saveProduct, deleteProduct, getProductTypes };
+async function searchProducts(req: Request, res: Response): Promise<void> {
+  try {
+    logger.info('[controller -> searchProducts] Starting search process');
+    logger.info('[controller -> searchProducts] Search term: ' + req.params.productName);
+
+    await productService.searchProducts(req, res);
+
+    logger.info('[controller -> searchProducts] Search process completed');
+  } catch (error) {
+    logger.error('[controller -> searchProducts] Error: ' + error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
+
+export { getProducts, saveProduct, deleteProduct, getProductTypes, searchProducts };

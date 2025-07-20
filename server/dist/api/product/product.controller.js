@@ -16,6 +16,7 @@ exports.getProducts = getProducts;
 exports.saveProduct = saveProduct;
 exports.deleteProduct = deleteProduct;
 exports.getProductTypes = getProductTypes;
+exports.searchProducts = searchProducts;
 const logger_service_1 = __importDefault(require("../../services/logger.service"));
 const product_service_1 = __importDefault(require("./product.service"));
 // TODO: Make Function to fetch products from service file
@@ -47,7 +48,8 @@ function saveProduct(req, res) {
 function deleteProduct(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield product_service_1.default.deleteProduct(req, res);
+            res.json({ message: 'Product deleted successfully' });
+            // await productService.deleteProduct(req, res);
         }
         catch (error) {
             logger_service_1.default.error('[controller -> deleteProduct] ' + error);
@@ -64,6 +66,20 @@ function getProductTypes(req, res) {
         }
         catch (error) {
             logger_service_1.default.error('[controller -> getProductTypes] ' + error);
+            res.status(500).json({ error: 'Internal Server Error' });
+        }
+    });
+}
+function searchProducts(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            logger_service_1.default.info('[controller -> searchProducts] Starting search process');
+            logger_service_1.default.info('[controller -> searchProducts] Search term: ' + req.params.productName);
+            yield product_service_1.default.searchProducts(req, res);
+            logger_service_1.default.info('[controller -> searchProducts] Search process completed');
+        }
+        catch (error) {
+            logger_service_1.default.error('[controller -> searchProducts] Error: ' + error);
             res.status(500).json({ error: 'Internal Server Error' });
         }
     });

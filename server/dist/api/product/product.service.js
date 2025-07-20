@@ -146,9 +146,57 @@ function getProductTypes(req, res) {
         }
     });
 }
+function searchProducts(req, res) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const searchTerm = req.params.productName;
+            logger_service_1.default.info('Searching products with term: ' + searchTerm);
+            if (!searchTerm || searchTerm.trim().length < 2) {
+                return res.status(400).json({
+                    error: 'Search term must be at least 2 characters long',
+                });
+            }
+            // חיפוש מוצרים לפי שם (חיפוש חלקי - contains)
+            const products = yield db_service_1.default.product.findMany({
+                where: {
+                    productName: {
+                        contains: searchTerm,
+                        mode: 'insensitive', // חיפוש לא רגיש לאותיות גדולות/קטנות
+                    },
+                },
+                orderBy: {
+                    productName: 'asc', // מיון לפי שם המוצר
+                },
+            });
+            // פורמט התוצאות
+            // const formattedProducts = products.map((product) => ({
+            //   id: product.id,
+            //   productName: product.productName,
+            //   sku: product.sku.toString(),
+            //   productDescription: product.productDescription,
+            //   productType: product.productType.name,
+            //   productTypeId: product.productTypeId,
+            //   marketedAt: product.marketedAt.toISOString(),
+            // }));
+            const resData = {
+                products,
+                totalResults: products.length,
+                searchTerm: searchTerm,
+                message: `Found ${products.length} products matching "${searchTerm}"`,
+            };
+            logger_service_1.default.info(`Search completed: found ${products.length} products`);
+            res.status(200).json(resData);
+        }
+        catch (error) {
+            logger_service_1.default.error('Error searching products: ' + error);
+            res.status(500).json({ error: 'Failed to search products' });
+        }
+    });
+}
 exports.default = {
     getProducts,
     saveProduct,
     deleteProduct,
     getProductTypes,
+    searchProducts,
 };

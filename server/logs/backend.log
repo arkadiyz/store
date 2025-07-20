@@ -13,3 +13,28 @@
 #--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - Database connected successfully  
 #--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - Cache loaded successfully  
 #--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - /==================================/  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:03 GMT - Info - Successfully connected to database  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:03 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:03 GMT - Info - ====================================  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:03 GMT - Info - Server is running on port: 5000  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:03 GMT - Info - Database connected successfully  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:03 GMT - Info - Cache loaded successfully  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:03 GMT - Info - /==================================/  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:11 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:11 GMT - Info - [controller -> searchProducts] Search term: דג  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:11 GMT - Info - Searching products with term: דג  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:11 GMT - Info - Search completed: found 1 products  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:11 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:22 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:22 GMT - Info - [controller -> searchProducts] Search term: גד  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:22 GMT - Info - Searching products with term: גד  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:22 GMT - Info - Search completed: found 0 products  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:22 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:42 GMT - Info - Saving product: req.body {"productName":"שלום","sku":"123213123","productDescription":"שגדשדג","productTypeId":3,"marketedAt":"2025-07-22"}  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:53:56 GMT - Info - Saving product: req.body {"productName":"שלום חבר","sku":"231323","productDescription":"בהבה","productTypeId":3,"marketedAt":"2025-07-13"}  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:54:06 GMT - Info - Saving product: req.body {"productName":"שלום ולא להיתראות ","sku":"432423","productDescription":"שדגשדגשד","productTypeId":3,"marketedAt":"2025-07-13"}  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:54:11 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:54:11 GMT - Info - [controller -> searchProducts] Search term: שלום  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:54:11 GMT - Info - Searching products with term: שלום  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:54:11 GMT - Info - Search completed: found 3 products  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:54:11 GMT - Info - [controller -> searchProducts] Search process completed  

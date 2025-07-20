@@ -138,9 +138,62 @@ async function getProductTypes(req: Request, res: Response): Promise<any> {
     throw new Error('Internal Server Error');
   }
 }
+
+async function searchProducts(req: Request, res: Response) {
+  try {
+    const searchTerm = req.params.productName;
+
+    loggerService.info('Searching products with term: ' + searchTerm);
+
+    if (!searchTerm || searchTerm.trim().length < 2) {
+      return res.status(400).json({
+        error: 'Search term must be at least 2 characters long',
+      });
+    }
+
+    // חיפוש מוצרים לפי שם (חיפוש חלקי - contains)
+    const products = await prisma.product.findMany({
+      where: {
+        productName: {
+          contains: searchTerm,
+          mode: 'insensitive', // חיפוש לא רגיש לאותיות גדולות/קטנות
+        },
+      },
+      orderBy: {
+        productName: 'asc', // מיון לפי שם המוצר
+      },
+    });
+
+    // פורמט התוצאות
+    // const formattedProducts = products.map((product) => ({
+    //   id: product.id,
+    //   productName: product.productName,
+    //   sku: product.sku.toString(),
+    //   productDescription: product.productDescription,
+    //   productType: product.productType.name,
+    //   productTypeId: product.productTypeId,
+    //   marketedAt: product.marketedAt.toISOString(),
+    // }));
+
+    const resData = {
+      products,
+      totalResults: products.length,
+      searchTerm: searchTerm,
+      message: `Found ${products.length} products matching "${searchTerm}"`,
+    };
+
+    loggerService.info(`Search completed: found ${products.length} products`);
+    res.status(200).json(resData);
+  } catch (error) {
+    loggerService.error('Error searching products: ' + error);
+    res.status(500).json({ error: 'Failed to search products' });
+  }
+}
+
 export default {
   getProducts,
   saveProduct,
   deleteProduct,
   getProductTypes,
+  searchProducts,
 };
