@@ -1,4 +1,4 @@
-import { ProductType } from '../types/Product';
+import { ProductFormData, ProductType } from '../types/Product';
 import { httpService } from './http.service';
 
 export async function getProductTypes() {
@@ -37,9 +37,9 @@ export async function getProducts() {
   }
 }
 
-export async function saveProduct() {
+export async function saveProduct(productData: ProductFormData) {
   try {
-    const res = await httpService.get('/api/product/save');
+    const res = await httpService.post('/api/product/save', productData);
     return res;
   } catch (err) {
     throw err;

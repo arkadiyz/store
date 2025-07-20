@@ -30,6 +30,12 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }
 
   if (!isOpen) return null;
 
+  const modalRoot = document.getElementById('modal-root');
+  if (!modalRoot) {
+    console.error('Modal root element not found');
+    return null;
+  }
+
   return createPortal(
     <div className='modal-overlay' onClick={onClose}>
       <div className='modal-content' onClick={(e) => e.stopPropagation()}>
@@ -42,6 +48,6 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }
         <div className='modal-body'>{children}</div>
       </div>
     </div>,
-    document.body
+    modalRoot
   );
 };

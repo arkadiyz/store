@@ -39,16 +39,21 @@ async function getProducts(req: Request, res: Response): Promise<void> {
 // TODO: MAKE function to save a product to a database
 async function saveProduct(req: Request, res: Response): Promise<void> {
   try {
-    const { name, code, description, productTypeId, marketedAt } = req.body;
+    const { productName, sku, productDescription, productType, marketedAt } = req.body;
+    loggerService.info('Saving product:              productName ' + productName);
+    loggerService.info('Saving product:              code ' + sku);
+    loggerService.info('Saving product:       description ' + productDescription);
+    loggerService.info('Saving product:     productTypeId ' + productType);
+    loggerService.info('Saving product:        marketedAt ' + marketedAt);
+    loggerService.info('Saving product:        req.body ' + JSON.stringify(req.body));
 
     const product = await prisma.product.create({
       data: {
-        name,
-        code: parseInt(code),
-        description,
-        productTypeId: parseInt(productTypeId),
-        productType: parseInt(productTypeId),
-        marketedAt: new Date(marketedAt),
+        name: productName,
+        code: parseInt(sku),
+        description: productDescription,
+        productTypeId: parseInt(productType),
+        marketedAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
       },
       // include: {
       //   productType: true,

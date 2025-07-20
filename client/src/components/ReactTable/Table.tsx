@@ -5,6 +5,7 @@ import { Modal } from '../Modal';
 import { ProductForm } from '../ProductForm';
 import { Product, ProductFormData } from '../../types/Product';
 import './Table.css';
+import { saveProduct } from '../../services/net.service';
 
 export function Table() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -125,6 +126,8 @@ export function Table() {
     }
   };
 
+  
+
   const handleFormSubmit = (productData: ProductFormData) => {
     if (editingProduct) {
       // עריכת מוצר קיים
@@ -133,10 +136,12 @@ export function Table() {
       // הוספת מוצר חדש
       const newId = Math.max(...products.map((p) => p.id)) + 1;
       setProducts((prev) => [...prev, { ...productData, id: newId }]);
+      saveProduct(productData);
     }
     setIsModalOpen(false);
     setEditingProduct(undefined);
   };
+
 
   const handleFormCancel = () => {
     setIsModalOpen(false);

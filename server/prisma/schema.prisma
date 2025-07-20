@@ -19,7 +19,6 @@ model Product {
   code          Int  
   description   String?     @db.Text
   productTypeId Int
-  productType   Int
   marketedAt    DateTime    @default(dbgenerated("now() - interval '7 days'"))
 }
 
