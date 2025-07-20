@@ -58,3 +58,12 @@ export async function deleteProduct(productId: number) {
     throw err;
   }
 }
+
+export async function searchProducts(testSearch: string) {
+  try {
+    const res = await httpService.get(`/api/product/search/${testSearch}`);
+    return res;
+  } catch (err) {
+    throw err;
+  }
+}
