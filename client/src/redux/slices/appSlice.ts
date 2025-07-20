@@ -5,7 +5,7 @@ import { AppState, ProductType } from '../../types/Product';
 // import { SupportedLanguage } from '../../translations/index';
 
 const initialState: AppState = {
-  productType: Array<ProductType>(),
+  productTypes: Array<ProductType>(),
 };
 
 const appSlice = createSlice({
@@ -13,7 +13,8 @@ const appSlice = createSlice({
   initialState,
   reducers: {
     setProductTypes(state, action: PayloadAction<Array<ProductType>>) {
-      state.productType = action.payload;
+      console.log('setProductTypes action.payload:', action.payload);
+      state.productTypes = action.payload;
     },
   },
 });

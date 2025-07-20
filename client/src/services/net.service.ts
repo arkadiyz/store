@@ -4,12 +4,27 @@ import { httpService } from './http.service';
 export async function getProductTypes() {
   try {
     const res = await httpService.get('/api/product/product-types');
-    if (!res || !Array.isArray(res)) {
-      throw new Error('Invalid response from server');
-    }
-    return res as ProductType[];
+
+    return createProductTypes(res);
   } catch (err) {
     throw err;
+  }
+}
+
+function createProductTypes(products: any) {
+  const newProductTypes: Array<ProductType> = new Array<ProductType>();
+  try {
+    products.forEach((product: ProductType) => {
+      const newProductType: ProductType = {
+        id: product.id,
+        name: product.name,
+      };
+      newProductTypes.push(newProductType);
+    });
+    return newProductTypes;
+  } catch (error) {
+    console.error('Error creating product types:', error);
+    throw error;
   }
 }
 

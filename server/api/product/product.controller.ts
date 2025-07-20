@@ -35,9 +35,8 @@ async function deleteProduct(req: Request, res: Response): Promise<void> {
 async function getProductTypes(req: Request, res: Response): Promise<void> {
   try {
     logger.info('[controller -> getProductTypes] Fetching product types');
-    const productTypes = await productService.getProductTypes();
+    const productTypes = await productService.getProductTypes(req, res);
     logger.info('[controller -> getProductTypes --> ] Fetching product types' + productTypes);
-    res.json(productTypes);
   } catch (error) {
     logger.error('[controller -> getProductTypes] ' + error);
     res.status(500).json({ error: 'Internal Server Error' });

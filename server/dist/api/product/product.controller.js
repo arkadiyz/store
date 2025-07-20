@@ -59,9 +59,8 @@ function getProductTypes(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             logger_service_1.default.info('[controller -> getProductTypes] Fetching product types');
-            const productTypes = yield product_service_1.default.getProductTypes();
+            const productTypes = yield product_service_1.default.getProductTypes(req, res);
             logger_service_1.default.info('[controller -> getProductTypes --> ] Fetching product types' + productTypes);
-            res.json(productTypes);
         }
         catch (error) {
             logger_service_1.default.error('[controller -> getProductTypes] ' + error);

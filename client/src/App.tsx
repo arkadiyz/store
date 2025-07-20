@@ -10,7 +10,7 @@ import { getProductTypes } from './services/net.service';
 import { setProductTypes } from './redux/slices/appSlice';
 
 function App() {
-  const { productType } = useSelector((state: RootState) => state.app);
+  const { productTypes } = useSelector((state: RootState) => state.app);
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
@@ -20,8 +20,9 @@ function App() {
   const getAllProductTypes = async () => {
     try {
       dispatch(setLoading(true));
-      const productType = await getProductTypes();
-      dispatch(setProductTypes(productType));
+      const res = await getProductTypes();
+      console.log('APP FILE Product Types:', res);
+      dispatch(setProductTypes(res));
     } catch (error) {
     } finally {
       dispatch(setLoading(false));

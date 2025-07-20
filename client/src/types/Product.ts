@@ -21,7 +21,7 @@ export interface ProductFormData {
 }
 
 export interface AppState {
-  productType: Array<ProductType>;
+  productTypes: Array<ProductType>;
 }
 
 export interface ErrorState {

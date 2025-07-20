@@ -86,10 +86,12 @@ async function deleteProduct(req: Request, res: Response): Promise<void> {
   }
 }
 
-async function getProductTypes(): Promise<any> {
+async function getProductTypes(req: Request, res: Response): Promise<any> {
   try {
     const productTypes = await getProductTypesFromCache();
-    return productTypes;
+    loggerService.info('typeof products: ' + typeof productTypes);
+
+    res.json(productTypes);
   } catch (error) {
     loggerService.error('[getProductTypes] ' + error);
     throw new Error('Internal Server Error');

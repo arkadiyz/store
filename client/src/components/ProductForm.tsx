@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Product, ProductFormData } from '../types/Product';
+import { Product, ProductFormData, ProductType } from '../types/Product';
+import { RootState } from '../redux/store';
+import { useSelector } from 'react-redux';
 
 interface ProductFormProps {
   product?: Product;
@@ -15,6 +17,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
     productType: '',
     marketDate: '',
   });
+  const { productTypes } = useSelector((state: RootState) => state.app);
 
   const [errors, setErrors] = useState<Partial<ProductFormData>>({});
 
@@ -75,8 +78,9 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
     }
   };
 
-  const productTypes = ['ירק', 'פרי', 'גידולי שדה', 'דגנים', 'קטניות'];
-
+  // const productTypes = ['ירק', 'פרי', 'גידולי שדה', 'דגנים', 'קטניות'];
+  console.log('Product Types:', productTypes);
+  console.log('Product Types:Array.isArray(productTypes) = ', Array.isArray(productTypes));
   return (
     <form onSubmit={handleSubmit} className='product-form'>
       <div className='form-row'>
@@ -134,11 +138,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
             className={errors.productType ? 'error' : ''}
           >
             <option value=''>בחר סוג מוצר</option>
-            {productTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
+            {Array.isArray(productTypes) &&
+              productTypes.map((type: ProductType) => (
+                <option key={type.id} value={type.name}>
+                  {type.id} - {type.name}
+                </option>
+              ))}
           </select>
           {errors.productType && <span className='error-message'>{errors.productType}</span>}
         </div>

@@ -96,11 +96,12 @@ function deleteProduct(req, res) {
         }
     });
 }
-function getProductTypes() {
+function getProductTypes(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const productTypes = yield (0, cache_service_1.getProductTypesFromCache)();
-            return productTypes;
+            logger_service_1.default.info('typeof products: ' + typeof productTypes);
+            res.json(productTypes);
         }
         catch (error) {
             logger_service_1.default.error('[getProductTypes] ' + error);

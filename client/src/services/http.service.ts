@@ -56,11 +56,7 @@ async function ajax<T>(
 
     const res: AxiosResponse = await axios(config);
 
-    if (res.status !== 200) {
-      return JSON.parse(res.data);
-    }
-
-    return res.data;
+    return JSON.parse(res.data);
   } catch (err: unknown) {
     const axiosError = err as AxiosError;
     handleError(axiosError);
