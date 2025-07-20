@@ -1,6 +1,7 @@
 import PageQuery from '../../data/data';
 import { Request, Response } from 'express';
 import loggerService from '../../services/logger.service';
+import { getProductTypesFromCache } from '../../services/cache.service';
 
 // TODO: MAKE function to fetching products from a database
 async function getProducts(req: Request, res: Response): Promise<void> {
@@ -55,8 +56,18 @@ async function deleteProduct(req: Request, res: Response): Promise<void> {
   return;
 }
 
+async function getProductTypes(): Promise<any> {
+  try {
+    const productTypes = await getProductTypesFromCache();
+    return productTypes;
+  } catch (error) {
+    loggerService.error('[getProductTypes] ' + error);
+    throw new Error('Internal Server Error');
+  }
+}
 export default {
   getProducts,
   saveProduct,
   deleteProduct,
+  getProductTypes,
 };

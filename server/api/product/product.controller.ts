@@ -32,5 +32,14 @@ async function deleteProduct(req: Request, res: Response): Promise<void> {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 }
+async function getProductTypes(req: Request, res: Response): Promise<void> {
+  try {
+    const productTypes = await productService.getProductTypes();
+    res.json(productTypes);
+  } catch (error) {
+    logger.error('[controller -> getProductTypes] ' + error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+}
 
-export { getProducts, saveProduct, deleteProduct };
+export { getProducts, saveProduct, deleteProduct, getProductTypes };

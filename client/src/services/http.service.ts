@@ -15,7 +15,7 @@ export interface IHttpService {
   get<T>(endpoint: string, data?: any): Promise<T>;
   post<T>(endpoint: string, data: any, URL?: string, responseType?: string): Promise<T>;
   put<T>(endpoint: string, data: any): Promise<T>;
-  delete<T>(endpoint: string, data: any): Promise<T>;
+  delete<T>(endpoint: string, data?: any): Promise<T>;
 }
 
 export const httpService: IHttpService = {
@@ -28,7 +28,7 @@ export const httpService: IHttpService = {
   put: <T>(endpoint: string, data: any) => {
     return ajax<T>(endpoint, 'PUT', data);
   },
-  delete: <T>(endpoint: string, data: any) => {
+  delete: <T>(endpoint: string, data?: any) => {
     return ajax<T>(endpoint, 'DELETE', data);
   },
 };
