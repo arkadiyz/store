@@ -11,9 +11,13 @@ const initialState: AppState = {
 const appSlice = createSlice({
   name: 'app',
   initialState,
-  reducers: {},
+  reducers: {
+    setProductTypes(state, action: PayloadAction<Array<ProductType>>) {
+      state.productType = action.payload;
+    },
+  },
 });
 
-export const {} = appSlice.actions;
+export const { setProductTypes } = appSlice.actions;
 
 export default appSlice.reducer;
