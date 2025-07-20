@@ -25,6 +25,7 @@ if (process.env.NODE_ENV === 'prodaction') {
 } else {
   const corsOptions = {
     origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
   };
   app.use(cors(corsOptions));

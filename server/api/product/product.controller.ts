@@ -26,9 +26,10 @@ async function saveProduct(req: Request, res: Response): Promise<void> {
 //TODO: Make Function to delete a product from service file
 async function deleteProduct(req: Request, res: Response): Promise<void> {
   try {
-    await productService.deleteProduct(req, res);
+    res.json({ message: 'Product deleted successfully' });
+    // await productService.deleteProduct(req, res);
   } catch (error) {
-    logger.error('[controller ->] ' + error);
+    logger.error('[controller -> deleteProduct] ' + error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 }

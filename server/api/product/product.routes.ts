@@ -1,10 +1,10 @@
 import express, { Express } from 'express';
 import logger from '../../services/logger.service';
-import { getProducts, getProductTypes, saveProduct } from './product.controller';
+import { deleteProduct, getProducts, getProductTypes, saveProduct } from './product.controller';
 const router = express.Router();
 
-router.get('/product-types', getProductTypes);
 router.post('/', getProducts);
+router.get('/product-types', getProductTypes);
 router.post('/save', saveProduct);
-router.delete('/:id', saveProduct);
+router.get('/delete/:id', deleteProduct);
 export default router;

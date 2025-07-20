@@ -3,6 +3,7 @@ import { Product, ProductFormData, ProductType } from '../types/Product';
 import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
 import './ProductForm.css';
+import { getNameById, setDefoultDate } from '../services/utils';
 
 interface ProductFormProps {
   product?: Product;
@@ -15,12 +16,14 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
     productName: '',
     sku: '',
     productDescription: '',
-    productType: '',
-    marketDate: '',
+    productTypeId: '',
+    marketedAt: setDefoultDate(), // ברירת מחדל - שבוע אחורה
   });
   const { productTypes } = useSelector((state: RootState) => state.app);
 
   const [errors, setErrors] = useState<Partial<ProductFormData>>({});
+
+  console.log('marketedAt ', product);
 
   useEffect(() => {
     if (product) {
@@ -30,9 +33,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      [name]: name === 'productTypeId' ? Number(value) : value,
     }));
 
     // Clear error when user starts typing
@@ -51,20 +55,16 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
       newErrors.productName = 'שם המוצר נדרש';
     }
 
-    if (!formData.sku.trim()) {
-      newErrors.sku = 'מק"ט נדרש';
-    }
-
     if (!formData.productDescription.trim()) {
       newErrors.productDescription = 'תיאור המוצר נדרש';
     }
 
-    if (!formData.productType.trim()) {
-      newErrors.productType = 'סוג המוצר נדרש';
+    if (!formData.productTypeId) {
+      newErrors.productTypeId = 'סוג המוצר נדרש';
     }
 
-    if (!formData.marketDate) {
-      newErrors.marketDate = 'תאריך שיווק נדרש';
+    if (!formData.marketedAt) {
+      newErrors.marketedAt = 'תאריך שיווק נדרש';
     }
 
     setErrors(newErrors);
@@ -101,7 +101,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
 
           <div>
             <label htmlFor='sku' className='product-form-label'>
-              מק"ט *
+              מק"ט
             </label>
             <input
               type='text'
@@ -109,10 +109,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
               name='sku'
               value={formData.sku}
               onChange={handleChange}
-              className={`product-form-input ${errors.sku ? 'error' : ''}`}
-              placeholder='הכנס מק״ט'
+              className='product-form-input'
+              placeholder='הכנס מספר מק"ט'
             />
-            {errors.sku && <span className='product-form-error'>{errors.sku}</span>}
+            <span className='product-form-info'>המק"ט </span>
           </div>
         </div>
 
@@ -137,22 +137,38 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
             <label htmlFor='productType' className='product-form-label'>
               סוג המוצר *
             </label>
-            <select
+            {/* <select
               id='productType'
               name='productType'
-              value={formData.productType}
+              // value={getNameById(formData.productTypeId)}
+              value={formData.productTypeId}
               onChange={handleChange}
-              className={`product-form-select ${errors.productType ? 'error' : ''}`}
+              className={`product-form-select ${errors.productTypeId ? 'error' : ''}`}
             >
               <option value=''>בחר סוג מוצר</option>
               {Array.isArray(productTypes) &&
                 productTypes.map((type: ProductType) => (
-                  <option key={type.id} value={type.name}>
+                  <option key={type.id} value={type.id}>
                     {type.id} - {type.name}
                   </option>
                 ))}
+            </select> */}
+            <select
+              id='productType'
+              name='productTypeId'
+              value={formData.productTypeId}
+              onChange={handleChange}
+              className={`product-form-select ${errors.productTypeId ? 'error' : ''}`}
+            >
+              <option value=''>בחר סוג מוצר</option>
+              {Array.isArray(productTypes) &&
+                productTypes.map((type: ProductType) => (
+                  <option key={type.id} value={type.id}>
+                    {type.name}
+                  </option>
+                ))}
             </select>
-            {errors.productType && <span className='product-form-error'>{errors.productType}</span>}
+            {errors.productTypeId && <span className='product-form-error'>{errors.productTypeId}</span>}
           </div>
 
           <div>
@@ -162,12 +178,13 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
             <input
               type='date'
               id='marketDate'
-              name='marketDate'
-              value={formData.marketDate}
+              name='marketedAt'
+              // value={formData.marketedAt || setDefoultDate()}
+              value={formData.marketedAt ? new Date(formData.marketedAt).toISOString().split('T')[0] : setDefoultDate()}
               onChange={handleChange}
-              className={`product-form-input ${errors.marketDate ? 'error' : ''}`}
+              className={`product-form-input ${errors.marketedAt ? 'error' : ''}`}
             />
-            {errors.marketDate && <span className='product-form-error'>{errors.marketDate}</span>}
+            {errors.marketedAt && <span className='product-form-error'>{errors.marketedAt}</span>}
           </div>
         </div>
 

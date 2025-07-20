@@ -15,9 +15,9 @@ datasource db {
 
 model Product {
   id            Int          @id @default(autoincrement())
-  name          String       @db.VarChar(50)
-  code          Int  
-  description   String?     @db.Text
+  productName   String       @db.VarChar(50)
+  sku          Int  
+  productDescription   String?     @db.Text
   productTypeId Int
   marketedAt    DateTime    @default(dbgenerated("now() - interval '7 days'"))
 }

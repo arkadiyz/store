@@ -21,7 +21,6 @@ function App() {
     try {
       dispatch(setLoading(true));
       const res = await getProductTypes();
-      console.log('APP FILE Product Types:', res);
       dispatch(setProductTypes(res));
     } catch (error) {
     } finally {

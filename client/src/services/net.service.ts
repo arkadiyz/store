@@ -1,4 +1,4 @@
-import { ProductFormData, ProductType } from '../types/Product';
+import { PageStatus, Product, ProductFormData, ProductsResponse, ProductType } from '../types/Product';
 import { httpService } from './http.service';
 
 export async function getProductTypes() {
@@ -28,10 +28,14 @@ function createProductTypes(products: any) {
   }
 }
 
-export async function getProducts() {
+export async function getProducts(pageStatus: PageStatus) {
   try {
-    const res = await httpService.get('/api/product/products');
-    return res;
+    const res = await httpService.post<ProductsResponse>('/api/product', pageStatus);
+    if (res && res.hasOwnProperty('products')) {
+      return res.products;
+    } else {
+      console.warn('Expected array of products, received:', res);
+    }
   } catch (err) {
     throw err;
   }
@@ -39,7 +43,7 @@ export async function getProducts() {
 
 export async function saveProduct(productData: ProductFormData) {
   try {
-    const res = await httpService.post('/api/product/save', productData);
+    const res = await httpService.post<Product>('/api/product/save', productData);
     return res;
   } catch (err) {
     throw err;
@@ -48,7 +52,7 @@ export async function saveProduct(productData: ProductFormData) {
 
 export async function deleteProduct(productId: number) {
   try {
-    const res = await httpService.delete(`/api/products/${productId}`);
+    const res = await httpService.get(`/api/product/delete/${productId}`);
     return res;
   } catch (err) {
     throw err;

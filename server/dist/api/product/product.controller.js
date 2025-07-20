@@ -50,7 +50,7 @@ function deleteProduct(req, res) {
             yield product_service_1.default.deleteProduct(req, res);
         }
         catch (error) {
-            logger_service_1.default.error('[controller ->] ' + error);
+            logger_service_1.default.error('[controller -> deleteProduct] ' + error);
             res.status(500).json({ error: 'Internal Server Error' });
         }
     });

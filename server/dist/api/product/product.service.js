@@ -47,32 +47,68 @@ function getProducts(req, res) {
     });
 }
 // TODO: MAKE function to save a product to a database
+// async function saveProduct(req: Request, res: Response): Promise<void> {
+//   try {
+//     const { productName, sku, productDescription, productTypeId, marketedAt } = req.body;
+//     loggerService.info('Saving product:              productName ' + productName);
+//     loggerService.info('Saving product:              code ' + sku);
+//     loggerService.info('Saving product:       description ' + productDescription);
+//     loggerService.info('Saving product:     productTypeId ' + productTypeId);
+//     loggerService.info('Saving product:        marketedAt ' + marketedAt);
+//     loggerService.info('Saving product:        req.body ' + JSON.stringify(req.body));
+//     const product = await prisma.product.create({
+//       data: {
+//         productName,
+//         sku: parseInt(sku),
+//         productDescription,
+//         productTypeId: parseInt(productTypeId),
+//         marketedAt:new Date(marketedAt)
+//       },
+//       // include: {
+//       //   productType: true,
+//       // },
+//     });
+//     const resData = {
+//       message: 'Product saved successfully',
+//       product,
+//     };
+//     res.status(201).json(resData);
+//   } catch (error) {
+//     loggerService.error('[saveProduct] ' + error);
+//     res.status(500).json({ error: 'Internal Server Error' });
+//   }
+// }
 function saveProduct(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const { name, code, description, productTypeId, marketedAt } = req.body;
-            const product = yield db_service_1.default.product.create({
-                data: {
-                    name,
-                    code: parseInt(code),
-                    description,
-                    productTypeId: parseInt(productTypeId),
-                    productType: parseInt(productTypeId),
-                    marketedAt: new Date(marketedAt),
-                },
-                // include: {
-                //   productType: true,
-                // },
-            });
-            const resData = {
-                message: 'Product saved successfully',
-                product,
+            const { id, productName, sku, productDescription, productTypeId, marketedAt } = req.body;
+            logger_service_1.default.info('Saving product: req.body ' + JSON.stringify(req.body));
+            const productData = {
+                productName,
+                sku: parseInt(sku),
+                productDescription,
+                productTypeId: parseInt(productTypeId),
+                marketedAt: new Date(marketedAt),
             };
-            res.status(201).json(resData);
+            let savedProduct;
+            if (id) {
+                // עריכה
+                savedProduct = yield db_service_1.default.product.update({
+                    where: { id: parseInt(id) },
+                    data: productData,
+                });
+            }
+            else {
+                // יצירה חדשה
+                savedProduct = yield db_service_1.default.product.create({
+                    data: productData,
+                });
+            }
+            res.status(200).json(savedProduct);
         }
-        catch (error) {
-            logger_service_1.default.error('[saveProduct] ' + error);
-            res.status(500).json({ error: 'Internal Server Error' });
+        catch (err) {
+            logger_service_1.default.error('Failed to save product' + err);
+            res.status(500).json({ error: 'Failed to save product' });
         }
     });
 }
@@ -81,6 +117,7 @@ function deleteProduct(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const productId = parseInt(req.params.id);
+            logger_service_1.default.info('[deleteProduct productId ] ' + productId);
             yield db_service_1.default.product.delete({
                 where: { id: productId },
             });

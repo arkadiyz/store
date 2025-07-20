@@ -1,125 +1,15 @@
-#--logger.service.ts--| Sun, 20 Jul 2025 12:04:34 GMT - Info - Saving product:              productName qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:04:34 GMT - Info - Saving product:              code qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:04:34 GMT - Info - Saving product:       description qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:04:34 GMT - Info - Saving product:     productTypeId undefined  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:04:34 GMT - Info - Saving product:        marketedAt undefined  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:04:34 GMT - Info - Saving product:        req.body {"productName":"wqe","sku":"qwe","productDescription":"qwe","productType":"ירק","marketDate":"2025-06-29"}  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:04:34 GMT - Error - [saveProduct] PrismaClientValidationError: 
-Invalid `prisma.product.create()` invocation in
-C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:50:42
-
-  47 loggerService.info('Saving product:        marketedAt ' + marketedAt);
-  48 loggerService.info('Saving product:        req.body ' + JSON.stringify(req.body));
-  49 
-→ 50 const product = await prisma.product.create({
-       data: {
-         name: "wqe",
-         description: "qwe",
-         productTypeId: NaN,
-         productType: NaN,
-         marketedAt: new Date("2025-07-13T12:04:34.715Z"),
-     +   code: Int
-       }
-     })
-
-Argument `code` is missing.  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:06:34 GMT - Info - Successfully connected to database  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:06:34 GMT - Info - 🔄 Product types cached:3  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:06:34 GMT - Info - ====================================  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:06:34 GMT - Info - Server is running on port: 5000  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:06:34 GMT - Info - Database connected successfully  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:06:34 GMT - Info - Cache loaded successfully  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:06:34 GMT - Info - /==================================/  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:07:01 GMT - Info - Saving product:              productName qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:07:01 GMT - Info - Saving product:              code qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:07:01 GMT - Info - Saving product:       description qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:07:01 GMT - Info - Saving product:     productTypeId undefined  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:07:01 GMT - Info - Saving product:        marketedAt undefined  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:07:01 GMT - Info - Saving product:        req.body {"productName":"wqe","sku":"qwe","productDescription":"qwe","productType":"1","marketDate":"2025-06-29"}  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:07:01 GMT - Error - [saveProduct] PrismaClientValidationError: 
-Invalid `prisma.product.create()` invocation in
-C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:50:42
-
-  47 loggerService.info('Saving product:        marketedAt ' + marketedAt);
-  48 loggerService.info('Saving product:        req.body ' + JSON.stringify(req.body));
-  49 
-→ 50 const product = await prisma.product.create({
-       data: {
-         name: "wqe",
-         description: "qwe",
-         productTypeId: NaN,
-         productType: NaN,
-         marketedAt: new Date("2025-07-13T12:07:01.916Z"),
-     +   code: Int
-       }
-     })
-
-Argument `code` is missing.  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:08 GMT - Info - Successfully connected to database  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:08 GMT - Info - 🔄 Product types cached:3  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:08 GMT - Info - ====================================  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:08 GMT - Info - Server is running on port: 5000  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:08 GMT - Info - Database connected successfully  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:08 GMT - Info - Cache loaded successfully  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:08 GMT - Info - /==================================/  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:33 GMT - Info - Saving product:              productName qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:33 GMT - Info - Saving product:              code qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:33 GMT - Info - Saving product:       description qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:33 GMT - Info - Saving product:     productTypeId undefined  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:33 GMT - Info - Saving product:        marketedAt undefined  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:33 GMT - Info - Saving product:        req.body {"productName":"wqe","sku":"qwe","productDescription":"qwe","productType":"1","marketDate":"2025-06-29"}  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:10:33 GMT - Error - [saveProduct] PrismaClientValidationError: 
-Invalid `prisma.product.create()` invocation in
-C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:50:42
-
-  47 loggerService.info('Saving product:        marketedAt ' + marketedAt);
-  48 loggerService.info('Saving product:        req.body ' + JSON.stringify(req.body));
-  49 
-→ 50 const product = await prisma.product.create({
-       data: {
-         name: "wqe",
-         description: "qwe",
-         productTypeId: NaN,
-         marketedAt: new Date("2025-07-13T12:10:33.123Z"),
-     +   code: Int
-       }
-     })
-
-Argument `code` is missing.  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:46 GMT - Info - Successfully connected to database  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:46 GMT - Info - 🔄 Product types cached:3  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:46 GMT - Info - ====================================  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:46 GMT - Info - Server is running on port: 5000  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:46 GMT - Info - Database connected successfully  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:46 GMT - Info - Cache loaded successfully  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:46 GMT - Info - /==================================/  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:56 GMT - Info - Saving product:              productName wqe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:56 GMT - Info - Saving product:              code qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:56 GMT - Info - Saving product:       description qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:56 GMT - Info - Saving product:     productTypeId 1  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:56 GMT - Info - Saving product:        marketedAt undefined  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:56 GMT - Info - Saving product:        req.body {"productName":"wqe","sku":"qwe","productDescription":"qwe","productType":"1","marketDate":"2025-06-29"}  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:11:56 GMT - Error - [saveProduct] PrismaClientValidationError: 
-Invalid `prisma.product.create()` invocation in
-C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:50:42
-
-  47 loggerService.info('Saving product:        marketedAt ' + marketedAt);
-  48 loggerService.info('Saving product:        req.body ' + JSON.stringify(req.body));
-  49 
-→ 50 const product = await prisma.product.create({
-       data: {
-         name: "wqe",
-         description: "qwe",
-         productTypeId: 1,
-         marketedAt: new Date("2025-07-13T12:11:56.109Z"),
-     +   code: Int
-       }
-     })
-
-Argument `code` is missing.  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:13:01 GMT - Info - Saving product:              productName wqe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:13:01 GMT - Info - Saving product:              code 123231  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:13:01 GMT - Info - Saving product:       description qwe  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:13:01 GMT - Info - Saving product:     productTypeId 1  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:13:01 GMT - Info - Saving product:        marketedAt undefined  
-#--logger.service.ts--| Sun, 20 Jul 2025 12:13:01 GMT - Info - Saving product:        req.body {"productName":"wqe","sku":"123231","productDescription":"qwe","productType":"1","marketDate":"2025-06-29"}  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:10:17 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:10:17 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:10:17 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:10:17 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:10:30 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:10:30 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:10:30 GMT - Info - typeof products: object  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:10:30 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - Successfully connected to database  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - ====================================  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - Server is running on port: 5000  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - Database connected successfully  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - Cache loaded successfully  
+#--logger.service.ts--| Sun, 20 Jul 2025 17:14:34 GMT - Info - /==================================/  

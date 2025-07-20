@@ -1,11 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppState, ProductType } from '../../types/Product';
-// import { Appointment, AppState } from '../../types';
-// import { mockDoctors } from '../../utils/mockData';
-// import { SupportedLanguage } from '../../translations/index';
+import { AppState, PageStatus, ProductType } from '../../types/Product';
 
 const initialState: AppState = {
   productTypes: Array<ProductType>(),
+  pageStatus: {
+    currentPage: 1,
+    pageSize: 10,
+  },
 };
 
 const appSlice = createSlice({
@@ -13,9 +14,9 @@ const appSlice = createSlice({
   initialState,
   reducers: {
     setProductTypes(state, action: PayloadAction<Array<ProductType>>) {
-      console.log('setProductTypes action.payload:', action.payload);
       state.productTypes = action.payload;
     },
+    setCurrentPage(state, action: PayloadAction<PageStatus>) {},
   },
 });
 

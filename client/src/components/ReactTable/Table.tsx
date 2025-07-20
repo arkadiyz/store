@@ -1,113 +1,38 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { DataTable } from './DataTable';
 import { ColumnDef } from '@tanstack/react-table';
 import { Modal } from '../Modal';
 import { ProductForm } from '../ProductForm';
 import { Product, ProductFormData } from '../../types/Product';
 import './Table.css';
-import { saveProduct } from '../../services/net.service';
+import { useDispatch } from 'react-redux';
+import { AppDispatch, RootState } from '../../redux/store';
+import { useSelector } from 'react-redux';
+import { deleteProduct, getProducts, saveProduct } from '../../services/net.service';
+import { formatDate, getNameById } from '../../services/utils';
 
 export function Table() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | undefined>(undefined);
-  const [products, setProducts] = useState<Product[]>([
-    {
-      id: 1,
-      productName: 'עגבניות טריות מחממה',
-      sku: '12345',
-      productDescription: 'עגבניות טריות מחממה',
-      productType: 'ירק',
-      marketDate: '2024-01-15',
-    },
-    {
-      id: 2,
-      productName: 'תפוחים אדומים מתוקים',
-      sku: '67890',
-      productDescription: 'תפוחים אדומים מתוקים',
-      productType: 'פרי',
-      marketDate: '2024-01-20',
-    },
-    {
-      id: 3,
-      productName: 'עגבנייה',
-      sku: '100003',
-      productDescription: 'עגבניות מובחרות לבישול וסלטים.',
-      productType: 'ירק',
-      marketDate: '2025-07-14',
-    },
-    {
-      id: 4,
-      productName: 'תפוח אדמה',
-      sku: '100004',
-      productDescription: 'תפוחי אדמה מזן דזירה, אידאליים לאפייה.',
-      productType: 'גידולי שדה',
-      marketDate: '2025-07-15',
-    },
-    {
-      id: 5,
-      productName: 'בננה',
-      sku: '100005',
-      productDescription: 'בננות בשלות מהגליל העליון.',
-      productType: 'פרי',
-      marketDate: '2025-07-11',
-    },
-    {
-      id: 6,
-      productName: 'חסה',
-      sku: '100006',
-      productDescription: 'חסה ירוקה וטרייה, מתאימה לסלטים.',
-      productType: 'ירק',
-      marketDate: '2025-07-13',
-    },
-    {
-      id: 7,
-      productName: 'תירס',
-      sku: '100007',
-      productDescription: 'תירס מתוק שנקטף טרי.',
-      productType: 'גידולי שדה',
-      marketDate: '2025-07-09',
-    },
-    {
-      id: 8,
-      productName: 'שום',
-      sku: '100008',
-      productDescription: 'שום מקומי חריף וארומטי.',
-      productType: 'גידולי שדה',
-      marketDate: '2025-07-08',
-    },
-    {
-      id: 9,
-      productName: 'אבטיח',
-      sku: '100009',
-      productDescription: "אבטיח מתוק וקראנצ'י לקיץ.",
-      productType: 'פרי',
-      marketDate: '2025-07-10',
-    },
-    {
-      id: 10,
-      productName: 'בצל סגול',
-      sku: '100010',
-      productDescription: 'בצל סגול רך לבישול וסלטים.',
-      productType: 'ירק',
-      marketDate: '2025-07-13',
-    },
-    {
-      id: 11,
-      productName: 'גזר',
-      sku: '100011',
-      productDescription: 'גזר טרי ומתוק מהאדמה.',
-      productType: 'ירק',
-      marketDate: '2025-07-07',
-    },
-    {
-      id: 12,
-      productName: 'מנגו',
-      sku: '100012',
-      productDescription: 'מנגו עסיסי וטעים במיוחד.',
-      productType: 'פרי',
-      marketDate: '2025-07-16',
-    },
-  ]);
+  const [products, setProducts] = useState<Product[]>([]);
+
+  const dispatch = useDispatch<AppDispatch>();
+  const { pageStatus } = useSelector((state: RootState) => state.app);
+
+  useEffect(() => {
+    getProductsPage();
+  }, [pageStatus]);
+
+  const getProductsPage = async () => {
+    try {
+      const res = await getProducts(pageStatus);
+      if (res) {
+        setProducts(res);
+      }
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  };
 
   const handleAdd = () => {
     setEditingProduct(undefined);
@@ -122,26 +47,32 @@ export function Table() {
   const handleDelete = (product: Product) => {
     const userConfirmed = window.confirm(`האם אתה בטוח שברצונך למחוק את ${product.productName}?`);
     if (userConfirmed) {
+      deleteProduct(product.id);
       setProducts((prev) => prev.filter((p) => p.id !== product.id));
     }
   };
 
-  
+  const handleFormSubmit = async (productData: ProductFormData) => {
+    try {
+      if (editingProduct) {
+        const savedProduct: Product = await saveProduct(productData);
+        setProducts((prev) => prev.map((p) => (p.id === savedProduct.id ? { ...savedProduct, id: savedProduct.id } : p)));
+      } else {
+        // הוספת מוצר חדש - שליחה לשרת
+        const savedProduct = await saveProduct(productData);
+        console.log('savedProduct ', savedProduct);
+        setProducts((prev) => [...prev, savedProduct]);
 
-  const handleFormSubmit = (productData: ProductFormData) => {
-    if (editingProduct) {
-      // עריכת מוצר קיים
-      setProducts((prev) => prev.map((p) => (p.id === editingProduct.id ? { ...productData, id: editingProduct.id } : p)));
-    } else {
-      // הוספת מוצר חדש
-      const newId = Math.max(...products.map((p) => p.id)) + 1;
-      setProducts((prev) => [...prev, { ...productData, id: newId }]);
-      saveProduct(productData);
+        // רענון רשימת המוצרים מהשרת
+        // await getProductsPage();
+      }
+      setIsModalOpen(false);
+      setEditingProduct(undefined);
+    } catch (error) {
+      console.error('Error saving product:', error);
+      alert('שגיאה בשמירת המוצר');
     }
-    setIsModalOpen(false);
-    setEditingProduct(undefined);
   };
-
 
   const handleFormCancel = () => {
     setIsModalOpen(false);
@@ -151,28 +82,41 @@ export function Table() {
   const columns: ColumnDef<Product>[] = [
     {
       accessorKey: 'id',
-      header: 'מספר',
+      header: 'מזהה',
       size: 80,
     },
+
     {
       accessorKey: 'productName',
       header: 'שם המוצר',
-      size: 200,
+      size: 150,
     },
     {
       accessorKey: 'sku',
       header: 'מק"ט',
-      size: 120,
+      size: 50,
     },
     {
       accessorKey: 'productDescription',
-      header: 'תיאור',
-      size: 250,
+      header: 'תיאור מוצר',
+      size: 100,
     },
     {
-      accessorKey: 'marketDate',
-      header: 'תאריך שיווק',
-      size: 150,
+      accessorKey: 'productType',
+      header: 'סוג המוצר',
+      size: 120,
+      cell: ({ row }) => {
+        const type = getNameById(row.original.productTypeId);
+        return <>{type}</>;
+      },
+    },
+    {
+      accessorKey: 'marketedAt',
+      header: 'תאריך שיווק המוצר',
+      size: 100,
+      cell: ({ row }) => {
+        return <>{formatDate(row.original.marketedAt)}</>;
+      },
     },
     {
       id: 'actions',
