@@ -9,9 +9,12 @@ export function TableCell<T>({ cell }: TableCellProps<T>) {
   return (
     <td
       style={{
-        border: '1px solid #d1d5db',
+        border: '1px solid #444',
         padding: '12px',
-        textAlign: 'justify',
+        textAlign: 'center',
+        color: 'white',
+        backgroundColor: '#1a1a1a',
+        fontSize: '14px',
       }}
     >
       {flexRender(cell.column.columnDef.cell, cell.getContext())}

@@ -55,3 +55,24 @@
 #--logger.service.js--| Sun, 20 Jul 2025 10:45:12 GMT - Info - [controller -> getProductTypes] Fetching product types  
 #--logger.service.js--| Sun, 20 Jul 2025 10:45:12 GMT - Info - typeof products: object  
 #--logger.service.js--| Sun, 20 Jul 2025 10:45:12 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:08 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:08 GMT - Info - typeof products: object  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:08 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:12 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:12 GMT - Info - typeof products: object  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:12 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:14 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:14 GMT - Info - typeof products: object  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:14 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:20 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:20 GMT - Info - typeof products: object  
+#--logger.service.js--| Sun, 20 Jul 2025 10:50:20 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.js--| Sun, 20 Jul 2025 10:51:18 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:51:18 GMT - Info - typeof products: object  
+#--logger.service.js--| Sun, 20 Jul 2025 10:51:18 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.js--| Sun, 20 Jul 2025 10:51:22 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 10:51:22 GMT - Info - typeof products: object  
+#--logger.service.js--| Sun, 20 Jul 2025 10:51:22 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.js--| Sun, 20 Jul 2025 11:08:18 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.js--| Sun, 20 Jul 2025 11:08:18 GMT - Info - typeof products: object  
+#--logger.service.js--| Sun, 20 Jul 2025 11:08:18 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  

@@ -11,19 +11,19 @@ export function Table() {
   const [products, setProducts] = useState<Product[]>([
     {
       id: 1,
-      productName: 'מלפפון',
-      sku: '100001',
-      productDescription: 'מלפפונים טריים מהשדה, גידול אורגני.',
+      productName: 'עגבניות טריות מחממה',
+      sku: '12345',
+      productDescription: 'עגבניות טריות מחממה',
       productType: 'ירק',
-      marketDate: '2025-07-12',
+      marketDate: '2024-01-15',
     },
     {
       id: 2,
-      productName: 'תפוח עץ',
-      sku: '100002',
-      productDescription: 'תפוחים אדומים, מתוקים ועסיסיים.',
+      productName: 'תפוחים אדומים מתוקים',
+      sku: '67890',
+      productDescription: 'תפוחים אדומים מתוקים',
       productType: 'פרי',
-      marketDate: '2025-07-10',
+      marketDate: '2024-01-20',
     },
     {
       id: 3,
@@ -145,33 +145,28 @@ export function Table() {
   const columns: ColumnDef<Product>[] = [
     {
       accessorKey: 'id',
-      header: 'מזהה',
+      header: 'מספר',
       size: 80,
     },
     {
       accessorKey: 'productName',
       header: 'שם המוצר',
-      size: 150,
+      size: 200,
     },
     {
       accessorKey: 'sku',
       header: 'מק"ט',
-      size: 50,
-    },
-    {
-      accessorKey: 'productDescription',
-      header: 'תיאור מוצר',
-      size: 100,
-    },
-    {
-      accessorKey: 'productType',
-      header: 'סוג המוצר',
       size: 120,
     },
     {
+      accessorKey: 'productDescription',
+      header: 'תיאור',
+      size: 250,
+    },
+    {
       accessorKey: 'marketDate',
-      header: 'תאריך שיווק המוצר',
-      size: 100,
+      header: 'תאריך שיווק',
+      size: 150,
     },
     {
       id: 'actions',
@@ -180,12 +175,34 @@ export function Table() {
       cell: ({ row }) => {
         const product = row.original;
         return (
-          <div className='action-buttons'>
-            <button onClick={() => handleEdit(product)} className='btn btn-edit' title='עריכה'>
-              ✏️
+          <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+            <button
+              onClick={() => handleEdit(product)}
+              style={{
+                backgroundColor: '#8b5cf6',
+                color: 'white',
+                border: 'none',
+                padding: '6px 12px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px',
+              }}
+            >
+              עריכה
             </button>
-            <button onClick={() => handleDelete(product)} className='btn btn-delete' title='מחיקה'>
-              🗑️
+            <button
+              onClick={() => handleDelete(product)}
+              style={{
+                backgroundColor: '#ef4444',
+                color: 'white',
+                border: 'none',
+                padding: '6px 12px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px',
+              }}
+            >
+              מחיקה
             </button>
           </div>
         );
@@ -194,25 +211,108 @@ export function Table() {
   ];
 
   return (
-    <div style={{ padding: '24px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: 'bold', margin: 0 }}>טבלת מוצרים</h1>
-        <button onClick={handleAdd} className='btn btn-add' title='הוסף מוצר חדש'>
-          ➕ הוסף מוצר
-        </button>
+    <div
+      style={{
+        maxWidth: '1200px',
+        margin: '0 auto',
+        backgroundColor: '#1a1a1a',
+        color: 'white',
+      }}
+    >
+      {/* Page Title */}
+      <div
+        style={{
+          textAlign: 'center',
+          marginBottom: '40px',
+        }}
+      >
+        <h1
+          style={{
+            fontSize: '32px',
+            fontWeight: 'bold',
+            margin: '0 0 8px 0',
+            borderBottom: '3px solid #3b82f6',
+            display: 'inline-block',
+            paddingBottom: '8px',
+          }}
+        >
+          ניהול מוצרים
+        </h1>
       </div>
 
-      <p style={{ marginBottom: '24px', color: '#6b7280', textAlign: 'right' }}>ניהול מוצרים במערכת - ניתן לחפש, למיין ולעבור בין דפים</p>
+      {/* Search and Add Section */}
+      <div
+        style={{
+          backgroundColor: '#2d2d2d',
+          padding: '24px',
+          borderRadius: '12px',
+          border: '2px solid #3b82f6',
+          marginBottom: '24px',
+        }}
+      >
+        <div
+          style={{
+            display: 'flex',
+            gap: '16px',
+            alignItems: 'center',
+            marginBottom: '24px',
+            flexWrap: 'wrap',
+          }}
+        >
+          <input
+            type='text'
+            placeholder='חיפוש לפי שם מוצר'
+            style={{
+              flex: 1,
+              minWidth: '300px',
+              padding: '12px 16px',
+              backgroundColor: '#3d3d3d',
+              border: '1px solid #555',
+              borderRadius: '8px',
+              color: 'white',
+              fontSize: '14px',
+            }}
+          />
+          <div style={{ marginRight: 'auto' }}>
+            <label style={{ marginRight: '8px', fontSize: '14px' }}>ביטול</label>
+          </div>
+          <button
+            onClick={handleAdd}
+            style={{
+              backgroundColor: '#8b5cf6',
+              color: 'white',
+              border: 'none',
+              padding: '12px 24px',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontSize: '14px',
+              fontWeight: 'bold',
+            }}
+          >
+            הוסף מוצר חדש
+          </button>
+        </div>
 
-      <DataTable
-        data={products}
-        columns={columns}
-        enableSorting={true}
-        enableFiltering={true}
-        enablePagination={true}
-        pageSize={5}
-        className='user-table'
-      />
+        {/* Table Container */}
+        <div
+          style={{
+            backgroundColor: '#1a1a1a',
+            borderRadius: '8px',
+            overflow: 'hidden',
+            border: '1px solid #444',
+          }}
+        >
+          <DataTable
+            data={products}
+            columns={columns}
+            enableSorting={true}
+            enableFiltering={true}
+            enablePagination={true}
+            pageSize={5}
+            className='product-table'
+          />
+        </div>
+      </div>
 
       <Modal isOpen={isModalOpen} onClose={handleFormCancel} title={editingProduct ? 'עריכת מוצר' : 'הוספת מוצר חדש'}>
         <ProductForm product={editingProduct} onSubmit={handleFormSubmit} onCancel={handleFormCancel} />

@@ -9,7 +9,6 @@ import {
   SortingState,
   ColumnFiltersState,
 } from '@tanstack/react-table';
-import { TableFilter } from './TableFilter';
 import { TableHeader } from './TableHeader';
 import { TableBody } from './TableBody';
 import { TablePagination } from './TablePagination';
@@ -62,13 +61,23 @@ export function DataTable<T>({
   });
 
   return (
-    <div className={`data-table ${className}`}>
-      {/* Global Filter */}
-      {enableFiltering && <TableFilter globalFilter={globalFilter} setGlobalFilter={setGlobalFilter} />}
-
+    <div
+      className={`data-table ${className}`}
+      style={{
+        backgroundColor: '#1a1a1a',
+        color: 'white',
+      }}
+    >
       {/* Table */}
       <div className='table-container' style={{ overflowX: 'auto' }}>
-        <table style={{ direction: 'rtl', width: '100%', borderCollapse: 'collapse', border: '1px solid #d1d5db' }}>
+        <table
+          style={{
+            direction: 'rtl',
+            width: '100%',
+            borderCollapse: 'collapse',
+            backgroundColor: '#1a1a1a',
+          }}
+        >
           <TableHeader headerGroups={table.getHeaderGroups()} enableSorting={enableSorting} />
           <TableBody rows={table.getRowModel().rows} onRowClick={onRowClick} />
         </table>

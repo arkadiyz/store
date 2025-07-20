@@ -10,11 +10,14 @@ export function TableHeaderCell<T>({ header, enableSorting }: TableHeaderCellPro
   return (
     <th
       style={{
-        border: '1px solid #d1d5db',
-        padding: '12px',
-        textAlign: 'left',
+        border: '1px solid #444',
+        padding: '16px 12px',
+        textAlign: 'center',
         width: header.getSize(),
-        backgroundColor: '#f9fafb',
+        backgroundColor: '#2d2d2d',
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: '14px',
       }}
     >
       {header.isPlaceholder ? null : (
@@ -22,6 +25,7 @@ export function TableHeaderCell<T>({ header, enableSorting }: TableHeaderCellPro
           style={{
             display: 'flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '8px',
             cursor: header.column.getCanSort() ? 'pointer' : 'default',
             userSelect: header.column.getCanSort() ? 'none' : 'auto',
@@ -30,7 +34,7 @@ export function TableHeaderCell<T>({ header, enableSorting }: TableHeaderCellPro
         >
           {flexRender(header.column.columnDef.header, header.getContext())}
           {enableSorting && header.column.getCanSort() && (
-            <span style={{ color: '#6b7280' }}>
+            <span style={{ color: '#3b82f6' }}>
               {{
                 asc: ' 🔼',
                 desc: ' 🔽',

@@ -12,12 +12,13 @@ export function TableRow<T>({ row, onRowClick }: TableRowProps<T>) {
     <tr
       style={{
         cursor: onRowClick ? 'pointer' : 'default',
+        backgroundColor: '#1a1a1a',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.backgroundColor = '#f9fafb';
+        e.currentTarget.style.backgroundColor = '#2d2d2d';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.backgroundColor = 'transparent';
+        e.currentTarget.style.backgroundColor = '#1a1a1a';
       }}
       onClick={() => onRowClick?.(row.original)}
     >
