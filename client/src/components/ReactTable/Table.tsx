@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux';
 import { deleteProduct, getProducts, saveProduct } from '../../services/net.service';
 import { formatDate, getNameById } from '../../services/utils';
 import { SearchAutoComplete } from '../SearchAutoComplete';
+import getColumns from './columns';
 
 export function Table() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -55,7 +56,6 @@ export function Table() {
 
   const handleProductSearch = (product: Product) => {
     console.log('Selected product:', product);
-
   };
 
   const handleFormSubmit = async (productData: ProductFormData) => {
@@ -85,64 +85,64 @@ export function Table() {
     setEditingProduct(undefined);
   };
 
-  const columns: ColumnDef<Product>[] = [
-    {
-      accessorKey: 'id',
-      header: 'מזהה',
-      size: 80,
-    },
+  // const columns: ColumnDef<Product>[] = [
+  //   {
+  //     accessorKey: 'id',
+  //     header: 'מזהה',
+  //     size: 80,
+  //   },
 
-    {
-      accessorKey: 'productName',
-      header: 'שם המוצר',
-      size: 150,
-    },
-    {
-      accessorKey: 'sku',
-      header: 'מק"ט',
-      size: 50,
-    },
-    {
-      accessorKey: 'productDescription',
-      header: 'תיאור מוצר',
-      size: 100,
-    },
-    {
-      accessorKey: 'productType',
-      header: 'סוג המוצר',
-      size: 120,
-      cell: ({ row }) => {
-        const type = getNameById(row.original.productTypeId);
-        return <>{type}</>;
-      },
-    },
-    {
-      accessorKey: 'marketedAt',
-      header: 'תאריך שיווק המוצר',
-      size: 100,
-      cell: ({ row }) => {
-        return <>{formatDate(row.original.marketedAt)}</>;
-      },
-    },
-    {
-      id: 'actions',
-      header: 'פעולות',
-      size: 120,
-      cell: ({ row }) => {
-        const product = row.original;
-        return (
-          <div className='action-buttons'>
-            <button onClick={() => handleEdit(product)} className='btn btn-edit'>
-              עריכה
-            </button>
-            <button onClick={() => handleDelete(product)} className='btn btn-delete'>
-              מחיקה
-            </button>
-          </div>
-        );
-      },
-    },
-  ];
+  //   {
+  //     accessorKey: 'productName',
+  //     header: 'שם המוצר',
+  //     size: 150,
+  //   },
+  //   {
+  //     accessorKey: 'sku',
+  //     header: 'מק"ט',
+  //     size: 50,
+  //   },
+  //   {
+  //     accessorKey: 'productDescription',
+  //     header: 'תיאור מוצר',
+  //     size: 100,
+  //   },
+  //   {
+  //     accessorKey: 'productType',
+  //     header: 'סוג המוצר',
+  //     size: 120,
+  //     cell: ({ row }) => {
+  //       const type = getNameById(row.original.productTypeId);
+  //       return <>{type}</>;
+  //     },
+  //   },
+  //   {
+  //     accessorKey: 'marketedAt',
+  //     header: 'תאריך שיווק המוצר',
+  //     size: 100,
+  //     cell: ({ row }) => {
+  //       return <>{formatDate(row.original.marketedAt)}</>;
+  //     },
+  //   },
+  //   {
+  //     id: 'actions',
+  //     header: 'פעולות',
+  //     size: 120,
+  //     cell: ({ row }) => {
+  //       const product = row.original;
+  //       return (
+  //         <div className='action-buttons'>
+  //           <button onClick={() => handleEdit(product)} className='btn btn-edit'>
+  //             עריכה
+  //           </button>
+  //           <button onClick={() => handleDelete(product)} className='btn btn-delete'>
+  //             מחיקה
+  //           </button>
+  //         </div>
+  //       );
+  //     },
+  //   },
+  // ];
 
   return (
     <div className='table-container'>
@@ -154,9 +154,9 @@ export function Table() {
       {/* Search and Add Section */}
       <div className='table-controls'>
         <div className='table-search-row'>
-          <div className='table-search'>
-            <SearchAutoComplete onProductSelect={handleProductSearch} placeholder='חפש מוצר לפי שם...' />
-          </div>
+          {/* <div className='table-search'> */}
+          <SearchAutoComplete onProductSelect={handleProductSearch} placeholder='...חפש מוצר לפי שם' />
+          {/* </div> */}
           <button onClick={handleAdd} className='table-add-button'>
             הוסף מוצר חדש
           </button>
@@ -166,7 +166,8 @@ export function Table() {
         <div className='table-wrapper'>
           <DataTable
             data={products}
-            columns={columns}
+            columns={getColumns(handleEdit, handleDelete)}
+            // columns={columns}
             enableSorting={true}
             enableFiltering={true}
             enablePagination={true}

@@ -2,14 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { searchProducts } from '../services/net.service';
 import { Product } from '../types/Product';
 import './SearchAutoComplete.css';
-import { getNameById } from '../services/utils';
+import { formatDate, getNameById } from '../services/utils';
 
 interface SearchAutoCompleteProps {
   onProductSelect: (product: Product) => void;
   placeholder?: string;
 }
 
-export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({ onProductSelect, placeholder = 'חפש מוצר...' }) => {
+export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = (props: SearchAutoCompleteProps) => {
+  const { onProductSelect, placeholder = 'חפש מוצר...' } = props;
   const [searchTerm, setSearchTerm] = useState('');
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -119,7 +120,7 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({ onProduc
         />
         {isLoading && (
           <div className='search-loading'>
-            <span>מחפש...</span>
+            <span>...מחפש</span>
           </div>
         )}
       </div>
@@ -132,6 +133,9 @@ export const SearchAutoComplete: React.FC<SearchAutoCompleteProps> = ({ onProduc
               className={`search-dropdown-item ${index === selectedIndex ? 'selected' : ''}`}
               onClick={() => handleProductClick(product)}
             >
+              <div className='product-details'>
+                <span className='product-name'>{formatDate(product.marketedAt)}</span>
+              </div>
               <div className='product-info'>
                 <span className='product-name'>{product.productName}</span>
                 <span className='product-sku'>מק"ט: {product.sku}</span>
