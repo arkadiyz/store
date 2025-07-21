@@ -5,16 +5,15 @@ A full-stack application built with React + Node.js + TypeScript + Prisma + Post
 ## System Requirements
 
 - Node.js (version 16 or higher)
-- npm or yarn
+- npm
 - PostgreSQL (version 12 or higher)
-- Git
 
 ## Project Setup
 
 ### 1. Clone the Repository
 
 ```bash
-git clone [REPOSITORY_URL]
+git clone https://github.com/arkadiyz/store.git
 cd store
 ```
 
@@ -31,7 +30,6 @@ Create a `.env` file in the `server` directory with the following content:
 
 ```env
 DATABASE_URL="postgresql://postgres:arkadi1990@localhost:5432/store_db"
-JWT_SECRET="your-super-secret-jwt-key-here"
 PORT=5000
 ```
 
@@ -73,7 +71,13 @@ psql -U postgres -d store_db -f ../schema.sql
 npx prisma generate
 ```
 
-5. Start the development server:
+5. Run the seed file to populate initial data:
+
+```bash
+npm run seed
+```
+
+6. Start the development server:
 
 ```bash
 npm run dev
@@ -113,14 +117,11 @@ The application will be running at: `http://localhost:3000`
 - `npm run build` - Build for production
 - `npm start` - Start production server
 - `npm run seed` - Run database seed file
-- `npm run push` - Push Prisma schema to database
 
 ### Client Scripts
 
 - `npm start` - Start React development server
 - `npm run build` - Build React app for production
-- `npm test` - Run tests
-- `npm run eject` - Eject from Create React App
 
 ## Project Structure
 
@@ -188,10 +189,6 @@ store/
     ├── package.json
     ├── tsconfig.json
     ├── api/                # API routes
-    │   ├── auth/           # Authentication endpoints
-    │   │   ├── auth.controller.ts
-    │   │   ├── auth.routes.ts
-    │   │   └── auth.service.ts
     │   └── product/        # Product endpoints
     │       ├── product.controller.ts
     │       ├── product.routes.ts
@@ -200,8 +197,6 @@ store/
     │   └── data.ts
     ├── logs/               # Application logs
     │   └── backend.log
-    ├── middlewares/        # Express middlewares
-    │   └── requireAuth.middleware.ts
     ├── prisma/             # Database schema & seeds
     │   ├── schema.prisma
     │   └── seed.ts
@@ -230,11 +225,6 @@ store/
 - **Notifications:** React Toastify
 
 ## API Endpoints
-
-### Authentication
-
-- `POST /api/auth/login` - User login
-- `POST /api/auth/register` - User registration
 
 ### Products
 
