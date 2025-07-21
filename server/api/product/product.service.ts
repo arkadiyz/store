@@ -79,7 +79,7 @@ async function saveProduct(req: Request, res: Response): Promise<void> {
 
     const productData = {
       productName,
-      sku: parseInt(sku),
+      sku: sku,
       productDescription,
       productTypeId: parseInt(productTypeId),
       marketedAt: new Date(marketedAt),

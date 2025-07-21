@@ -33,12 +33,27 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+    let tempValue: number | string;
+    switch (name) {
+      case 'productTypeId':
+        console.log('This is an apple');
+        tempValue = Number(value);
 
+        break;
+      case 'sku':
+        console.log('This is an apple');
+        tempValue = String(value);
+
+        break;
+
+      default:
+        tempValue = value;
+        break;
+    }
     setFormData((prev) => ({
       ...prev,
-      [name]: name === 'productTypeId' ? Number(value) : value,
+      [name]: tempValue,
     }));
-
     // Clear error when user starts typing
     if (errors[name as keyof ProductFormData]) {
       setErrors((prev) => ({
@@ -95,8 +110,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
               onChange={handleChange}
               className={`product-form-input ${errors.productName ? 'error' : ''}`}
               placeholder='הכנס שם מוצר'
+              maxLength={50}
             />
-            {errors.productName && <span className='product-form-error'>{errors.productName}</span>}
+            <div className='product-form-input-info'>
+              <div className={`char-counter ${formData.productName.length > 49 ? 'warn' : ''}`}>{formData.productName.length} / 50 תווים</div>
+              {errors.productName && <span className='product-form-error'>{errors.productName}</span>}
+            </div>
           </div>
 
           <div>
@@ -104,15 +123,22 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
               מק"ט
             </label>
             <input
-              type='text'
+              type='number'
               id='sku'
               name='sku'
               value={formData.sku}
               onChange={handleChange}
               className='product-form-input'
               placeholder='הכנס מספר מק"ט'
+              min={0}
+              maxLength={9}
+              onKeyDown={(e) => {
+                if (e.key === '-' || e.key === 'e') {
+                  e.preventDefault();
+                }
+              }}
             />
-            <span className='product-form-info'>המק"ט </span>
+            <div className={`char-counter ${formData.sku.length > 9 ? 'warn' : ''}`}>{formData.sku.length} / 10 תווים</div>
           </div>
         </div>
 

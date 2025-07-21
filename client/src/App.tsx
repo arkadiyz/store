@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import HomePage from './pages/HomePage';
 import { AppDispatch, RootState } from './redux/store';
 import { useDispatch } from 'react-redux';
 import { setLoading } from './redux/slices/loaderSlice';
 import { useSelector } from 'react-redux';
-import { ProductType } from './types/Product';
 import { getProductTypes } from './services/net.service';
 import { setProductTypes } from './redux/slices/appSlice';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const { productTypes } = useSelector((state: RootState) => state.app);
@@ -30,6 +31,7 @@ function App() {
   return (
     <div className='App'>
       <HomePage />
+      <ToastContainer />
     </div>
   );
 }

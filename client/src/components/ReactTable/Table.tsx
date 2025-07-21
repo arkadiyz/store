@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DataTable } from './DataTable';
-import { ColumnDef } from '@tanstack/react-table';
 import { Modal } from '../Modal';
 import { ProductForm } from '../ProductForm';
 import { Product, ProductFormData } from '../../types/Product';
 import './Table.css';
-import { useDispatch } from 'react-redux';
-import { AppDispatch, RootState } from '../../redux/store';
+import { RootState } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { deleteProduct, getProducts, saveProduct } from '../../services/net.service';
-import { formatDate, getNameById } from '../../services/utils';
 import { SearchAutoComplete } from '../SearchAutoComplete';
 import getColumns from './columns';
+import { toast } from 'react-toastify';
 
 export function Table() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,8 +47,13 @@ export function Table() {
   const handleDelete = (product: Product) => {
     const userConfirmed = window.confirm(`האם אתה בטוח שברצונך למחוק את ${product.productName}?`);
     if (userConfirmed) {
-      deleteProduct(product.id);
-      setProducts((prev) => prev.filter((p) => p.id !== product.id));
+      try {
+        deleteProduct(product.id);
+        setProducts((prev) => prev.filter((p) => p.id !== product.id));
+        toast.success('הפעולה בוצע בהצלחה');
+      } catch (error) {
+        toast.error('אירעה שגיאה במחיקת מוצר');
+      }
     }
   };
 
@@ -74,9 +77,11 @@ export function Table() {
       }
       setIsModalOpen(false);
       setEditingProduct(undefined);
+      toast.success('הפעולה בוצע בהצלחה');
     } catch (error) {
       console.error('Error saving product:', error);
       alert('שגיאה בשמירת המוצר');
+      toast.error('אירעה שגיאה בשמירת המוצר');
     }
   };
 
@@ -84,6 +89,17 @@ export function Table() {
     setIsModalOpen(false);
     setEditingProduct(undefined);
   };
+
+  function handleExitGame() {
+    const confirmed = window.confirm('האם אתה בטוח שברצונך לצאת מהמשחק?');
+    if (confirmed) {
+      // כאן מבצעים את פעולת היציאה
+      console.log('המשחק נסגר');
+      // לדוגמה: navigate to main menu or close window
+    } else {
+      console.log('המשתמש בחר להישאר במשחק');
+    }
+  }
 
   return (
     <div className='table-container'>
@@ -100,6 +116,9 @@ export function Table() {
           {/* </div> */}
           <button onClick={handleAdd} className='table-add-button'>
             הוסף מוצר חדש
+          </button>
+          <button className='table-add-button' onClick={handleExitGame}>
+            יציאה מהמשחק
           </button>
         </div>
 

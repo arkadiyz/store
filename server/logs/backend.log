@@ -1872,3 +1872,283 @@ ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error 
 #--logger.service.ts--| Mon, 21 Jul 2025 09:05:59 GMT - Info - [controller -> getProducts] {"pageNum":2,"pageSize":5,"totalPages":3,"totalProducts":11}  
 #--logger.service.ts--| Mon, 21 Jul 2025 09:06:03 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":5,"totalPages":3,"totalProducts":11}  
 #--logger.service.ts--| Mon, 21 Jul 2025 09:06:06 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":50,"totalPages":3,"totalProducts":11}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:13:19 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:13:19 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:13:19 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:13:19 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:13:19 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:13:19 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:13:19 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:13:19 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:15:12 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:15:12 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:15:12 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:15:12 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:18:22 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:18:22 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:18:22 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:18:22 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:18:37 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:18:37 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:18:37 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:18:37 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:19:00 GMT - Info - Saving product: req.body {"productName":"wqeqwe","sku":"123456789","productDescription":"qweqwe","productTypeId":1,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:19:04 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":50,"totalPages":2,"totalProducts":11}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:19:09 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:19:09 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:19:09 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:19:09 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:19:31 GMT - Info - Saving product: req.body {"productName":"בדיקה מק\"ט","sku":"123456789","productDescription":"דגכ","productTypeId":1,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:19:35 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":50,"totalPages":2,"totalProducts":12}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:20:26 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":5,"totalPages":1,"totalProducts":13}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:20:27 GMT - Info - [controller -> getProducts] {"pageNum":2,"pageSize":5,"totalPages":3,"totalProducts":13}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:20:28 GMT - Info - [controller -> getProducts] {"pageNum":3,"pageSize":5,"totalPages":3,"totalProducts":13}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:20:51 GMT - Info - Saving product: req.body {"productName":"בדיקת מק\"ט 2","sku":"123456789012345","productDescription":"גדכ","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:20:51 GMT - Error - Failed to save productPrismaClientUnknownRequestError: 
+Invalid `prisma.product.create()` invocation in
+C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:98:43
+
+  95   });
+  96 } else {
+  97   // יצירה חדשה
+→ 98   savedProduct = await prisma.product.create(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error { kind: ToSql(1), cause: Some(Error { kind: ConversionError("Unable to fit integer value '123456789012345' into an INT4 (32-bit signed integer)."), original_code: None, original_message: None }) }), transient: false })  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:21:16 GMT - Info - Saving product: req.body {"productName":"בדיקת מק\"ט 2","sku":"12345678901234","productDescription":"גדכ","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:21:16 GMT - Error - Failed to save productPrismaClientUnknownRequestError: 
+Invalid `prisma.product.create()` invocation in
+C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:98:43
+
+  95   });
+  96 } else {
+  97   // יצירה חדשה
+→ 98   savedProduct = await prisma.product.create(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error { kind: ToSql(1), cause: Some(Error { kind: ConversionError("Unable to fit integer value '12345678901234' into an INT4 (32-bit signed integer)."), original_code: None, original_message: None }) }), transient: false })  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:21:19 GMT - Info - Saving product: req.body {"productName":"בדיקת מק\"ט 2","sku":"1234567890123","productDescription":"גדכ","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:21:19 GMT - Error - Failed to save productPrismaClientUnknownRequestError: 
+Invalid `prisma.product.create()` invocation in
+C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:98:43
+
+  95   });
+  96 } else {
+  97   // יצירה חדשה
+→ 98   savedProduct = await prisma.product.create(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error { kind: ToSql(1), cause: Some(Error { kind: ConversionError("Unable to fit integer value '1234567890123' into an INT4 (32-bit signed integer)."), original_code: None, original_message: None }) }), transient: false })  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:21:24 GMT - Info - Saving product: req.body {"productName":"בדיקת מק\"ט 2","sku":"123456789012","productDescription":"גדכ","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:21:24 GMT - Error - Failed to save productPrismaClientUnknownRequestError: 
+Invalid `prisma.product.create()` invocation in
+C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:98:43
+
+  95   });
+  96 } else {
+  97   // יצירה חדשה
+→ 98   savedProduct = await prisma.product.create(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error { kind: ToSql(1), cause: Some(Error { kind: ConversionError("Unable to fit integer value '123456789012' into an INT4 (32-bit signed integer)."), original_code: None, original_message: None }) }), transient: false })  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:21:28 GMT - Info - Saving product: req.body {"productName":"בדיקת מק\"ט 2","sku":"12345678901","productDescription":"גדכ","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:21:28 GMT - Error - Failed to save productPrismaClientUnknownRequestError: 
+Invalid `prisma.product.create()` invocation in
+C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:98:43
+
+  95   });
+  96 } else {
+  97   // יצירה חדשה
+→ 98   savedProduct = await prisma.product.create(
+Error occurred during query execution:
+ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error { kind: ToSql(1), cause: Some(Error { kind: ConversionError("Unable to fit integer value '12345678901' into an INT4 (32-bit signed integer)."), original_code: None, original_message: None }) }), transient: false })  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:21:33 GMT - Info - Saving product: req.body {"productName":"בדיקת מק\"ט 2","sku":"1234567890","productDescription":"גדכ","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:24:33 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:24:33 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:24:33 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:24:33 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:30:39 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:30:39 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:30:39 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:30:39 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:32:34 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:32:34 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:32:34 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:32:34 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:32:50 GMT - Info - Saving product: req.body {"productName":"דגכדגכ","sku":"34343343","productDescription":"דגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכדגכ","productTypeId":3,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:33:51 GMT - Info - Saving product: req.body {"productName":"דשגשדגשדג","sku":"12312312321321211323213","productDescription":"שדגשדגשדגשדג","productTypeId":3,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:33:51 GMT - Error - Failed to save productPrismaClientValidationError: 
+Invalid `prisma.product.create()` invocation in
+C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:98:43
+
+  95   });
+  96 } else {
+  97   // יצירה חדשה
+→ 98   savedProduct = await prisma.product.create({
+         data: {
+           productName: "דשגשדגשדג",
+           sku: 1.2312312321321212e+22,
+                ~~~~~~~~~~~~~~~~~~~~~~
+           productDescription: "שדגשדגשדגשדג",
+           productTypeId: 3,
+           marketedAt: new Date("2025-07-14T00:00:00.000Z")
+         }
+       })
+
+Unable to fit value 1.2312312321321212e+22 into a 64-bit signed integer for field `sku`  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:04 GMT - Info - Successfully connected to database  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:04 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:04 GMT - Info - ====================================  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:04 GMT - Info - Server is running on port: 5000  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:04 GMT - Info - Database connected successfully  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:04 GMT - Info - Cache loaded successfully  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:04 GMT - Info - /==================================/  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:17 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:17 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:17 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:17 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:33 GMT - Info - Saving product: req.body {"productName":"שלום","sku":"123456789987989789","productDescription":"שלוםשלוםשלוםשלוםשלוםשלוםשלוםשלום","productTypeId":1,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:43:49 GMT - Info - Saving product: req.body {"productName":"שלום 2 ","sku":"123451231513215132156413215","productDescription":"דגכדגכדגכגדכדגכדגכדגכדג גכדכלך צ ףפחןךמנג דגכןחיןם","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:44:17 GMT - Info - Saving product: req.body {"productName":"בדיקה שינוי תאריך ","sku":"232323254543323434534242133424","productDescription":"דגכגדכג\nגדכדגכדגכ\nדגכדגגדכדגכגכגכ גדכדגכקרד דקכדכדגכ","productTypeId":2,"marketedAt":"2025-07-21"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:44:56 GMT - Info - Saving product: req.body {"productName":"בידה שם מוצר -------------------------------------","sku":"541231553125","productDescription":"בידה שם מוצר -------------------------------------","productTypeId":3,"marketedAt":"2025-07-23"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:16 GMT - Info - Saving product: req.body {"productName":"TEST","sku":"43343441111","productDescription":"דשגדג","productTypeId":2,"marketedAt":"2025-07-30"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:22 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:22 GMT - Info - [controller -> searchProducts] Search term: בש  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:22 GMT - Info - Searching products with term: בש  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:22 GMT - Info - Search completed: found 0 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:22 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:24 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:24 GMT - Info - [controller -> searchProducts] Search term: בדי  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:24 GMT - Info - Searching products with term: בדי  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:24 GMT - Info - Search completed: found 1 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:24 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:30 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:30 GMT - Info - [controller -> searchProducts] Search term: שלו  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:30 GMT - Info - Searching products with term: שלו  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:30 GMT - Info - Search completed: found 2 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:30 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:34 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:34 GMT - Info - [controller -> searchProducts] Search term: של  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:34 GMT - Info - Searching products with term: של  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:34 GMT - Info - Search completed: found 2 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:34 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:35 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:35 GMT - Info - [controller -> searchProducts] Search term: שלו  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:35 GMT - Info - Searching products with term: שלו  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:35 GMT - Info - Search completed: found 2 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:45:35 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:03 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:03 GMT - Info - [controller -> searchProducts] Search term: csh  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:03 GMT - Info - Searching products with term: csh  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:03 GMT - Info - Search completed: found 0 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:03 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:06 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:06 GMT - Info - [controller -> searchProducts] Search term: בדירה  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:06 GMT - Info - Searching products with term: בדירה  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:06 GMT - Info - Search completed: found 0 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:06 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:07 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:07 GMT - Info - [controller -> searchProducts] Search term: בדירהדג  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:07 GMT - Info - Searching products with term: בדירהדג  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:07 GMT - Info - Search completed: found 0 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:07 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:08 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:08 GMT - Info - [controller -> searchProducts] Search term: בדירהדגג כגכ  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:08 GMT - Info - Searching products with term: בדירהדגג כגכ  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:08 GMT - Info - Search completed: found 0 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:08 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:10 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:10 GMT - Info - [controller -> searchProducts] Search term: בדי  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:10 GMT - Info - Searching products with term: בדי  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:10 GMT - Info - Search completed: found 1 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:10 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:36 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:36 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:36 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:46:36 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:47:05 GMT - Info - Saving product: req.body {"productName":"שלום בדיקה לחיפוש ","sku":"123456789","productDescription":"שלום בדיקה לחיפוש שלום בדיקה לחיפוש שלום בדיקה לחיפוש ","productTypeId":3,"marketedAt":"2025-07-17"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:47:40 GMT - Info - Saving product: req.body {"productName":"עוד בדיקה שלום לחיפוש ","sku":"854512623","productDescription":"15468123582","productTypeId":2,"marketedAt":"2025-07-22"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:47:43 GMT - Info - [controller -> searchProducts] Starting search process  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:47:43 GMT - Info - [controller -> searchProducts] Search term: שלום  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:47:43 GMT - Info - Searching products with term: שלום  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:47:43 GMT - Info - Search completed: found 4 products  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:47:43 GMT - Info - [controller -> searchProducts] Search process completed  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:47:57 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":5,"totalPages":1,"totalProducts":5}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:47:58 GMT - Info - [controller -> getProducts] {"pageNum":2,"pageSize":5,"totalPages":2,"totalProducts":7}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:48:00 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":5,"totalPages":2,"totalProducts":7}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:48:04 GMT - Info - [controller -> getProducts] {"pageNum":2,"pageSize":5,"totalPages":2,"totalProducts":7}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:48:05 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":5,"totalPages":2,"totalProducts":7}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:48:21 GMT - Info - Saving product: req.body {"productName":"בדיקה לצורך דיפקופ ","sku":"856963","productDescription":"בדיקה לצורך דיפקופ ","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:48:38 GMT - Info - Saving product: req.body {"productName":"בדיקה לצורך דיפקוף2","sku":"574236","productDescription":"בדיקה לצורך דיפקוף2\nבדיקה לצורך דיפקוף2\nבדיקה לצורך דיפקוף2","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:48:54 GMT - Info - Saving product: req.body {"productName":"בדיקה לצורך דיפקוף 3 ","sku":"558533274","productDescription":"בדיקה לצורך דיפקוף 3 \nבדיקה לצורך דיפקוף 3 \nבדיקה לצורך דיפקוף 3 \nבדיקה לצורך דיפקוף 3 ","productTypeId":3,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:49:20 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":7}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:49:23 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":5,"totalPages":1,"totalProducts":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:49:37 GMT - Info - Saving product: req.body {"productName":"בדיקה לצורך דיפקוף 4","sku":"234367676","productDescription":"בדיקה לצורך דיפקוף 3 ","productTypeId":1,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:49:51 GMT - Info - Saving product: req.body {"productName":"בדיקה לצורך דיפקוף 5","sku":"8565642184781","productDescription":"בדיקה לצורך דיפקוף 3 בדיקה לצורך דיפקוף 3  בדיקה לצורך דיפקוף 3 ","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:11 GMT - Info - Saving product: req.body {"productName":"בדיקה לצורך דיפקוף 5","sku":"8562551","productDescription":"בדיקה לצורך דיפקוף 3 בדיקה לצורך דיפקוף 4","productTypeId":3,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:14 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:14 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:14 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:14 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:26 GMT - Info - Saving product: req.body {"productName":"בדיקה לצורך דיפקוף 6","sku":"1","productDescription":"בדיקה לצורך דיפקוף 3 ","productTypeId":2,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:48 GMT - Info - Saving product: req.body {"productName":"בדיקה לצורך דיפקוף 7","sku":"58","productDescription":"בדיקה לצורך דיפקוף 8","productTypeId":1,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:51 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:51 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:51 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:51 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:55 GMT - Info - [controller -> getProducts] {"pageNum":2,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:50:57 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:51:00 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":5,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:51:02 GMT - Info - [controller -> getProducts] {"pageNum":3,"pageSize":5,"totalPages":3,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:51:03 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":5,"totalPages":3,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:53:40 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:53:40 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:53:40 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:53:40 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:53:52 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:56:21 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:56:21 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:56:21 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:56:35 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:56:35 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:56:35 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:57:25 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:57:29 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:57:38 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:57:45 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:57:48 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:58:06 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:58:21 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:58:36 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:58:39 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:03 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:05 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:06 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:09 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:10 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:12 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":15}  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:40 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:40 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:40 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:44 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:44 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 09:59:44 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:00:19 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:00:19 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:00:19 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:00:19 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:00:45 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:00:45 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:00:45 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:00:45 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:01:23 GMT - Info - Saving product: req.body {"productName":"בדיקה לתצוגת אידיקציה למשתמש ","sku":"5851484125","productDescription":"בדיקה לתצוגת אידיקציה למשתמש  בדיקה לתצוגת אידיקציה למשתמש ","productTypeId":2,"marketedAt":"2025-08-01"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:02:27 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:02:27 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:02:27 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:02:27 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:02:59 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:03:04 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:03:04 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:03:07 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:03:17 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:03:20 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:03:27 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:03:33 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:03:39 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 10:03:41 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
