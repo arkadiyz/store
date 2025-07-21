@@ -19,12 +19,12 @@ const cache_service_1 = require("../../services/cache.service");
 function getProducts(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const { pageNum = 1, pageCount = 10 } = req.body;
+            const { pageNum = 1, pageSize = 10 } = req.body;
             // קבלת מוצרים מהמסד עם pagination
-            const skip = (pageNum - 1) * pageCount;
+            const skip = (pageNum - 1) * pageSize;
             const products = yield db_service_1.default.product.findMany({
                 skip,
-                take: pageCount,
+                take: pageSize,
                 // include: {
                 //   productType: true,
                 // },
@@ -34,9 +34,9 @@ function getProducts(req, res) {
             const resData = {
                 products,
                 pageNum,
-                pageCount,
+                pageSize,
                 totalProducts,
-                totalPages: Math.ceil(totalProducts / pageCount),
+                totalPages: Math.ceil(totalProducts / pageSize),
             };
             res.status(200).json(resData);
         }
@@ -46,38 +46,6 @@ function getProducts(req, res) {
         }
     });
 }
-// TODO: MAKE function to save a product to a database
-// async function saveProduct(req: Request, res: Response): Promise<void> {
-//   try {
-//     const { productName, sku, productDescription, productTypeId, marketedAt } = req.body;
-//     loggerService.info('Saving product:              productName ' + productName);
-//     loggerService.info('Saving product:              code ' + sku);
-//     loggerService.info('Saving product:       description ' + productDescription);
-//     loggerService.info('Saving product:     productTypeId ' + productTypeId);
-//     loggerService.info('Saving product:        marketedAt ' + marketedAt);
-//     loggerService.info('Saving product:        req.body ' + JSON.stringify(req.body));
-//     const product = await prisma.product.create({
-//       data: {
-//         productName,
-//         sku: parseInt(sku),
-//         productDescription,
-//         productTypeId: parseInt(productTypeId),
-//         marketedAt:new Date(marketedAt)
-//       },
-//       // include: {
-//       //   productType: true,
-//       // },
-//     });
-//     const resData = {
-//       message: 'Product saved successfully',
-//       product,
-//     };
-//     res.status(201).json(resData);
-//   } catch (error) {
-//     loggerService.error('[saveProduct] ' + error);
-//     res.status(500).json({ error: 'Internal Server Error' });
-//   }
-// }
 function saveProduct(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -85,7 +53,7 @@ function saveProduct(req, res) {
             logger_service_1.default.info('Saving product: req.body ' + JSON.stringify(req.body));
             const productData = {
                 productName,
-                sku: parseInt(sku),
+                sku: sku,
                 productDescription,
                 productTypeId: parseInt(productTypeId),
                 marketedAt: new Date(marketedAt),
@@ -112,7 +80,6 @@ function saveProduct(req, res) {
         }
     });
 }
-// TODO: MAKE function to delete a product from a database
 function deleteProduct(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

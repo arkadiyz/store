@@ -1,0 +1,46 @@
+#--logger.service.ts--| Mon, 21 Jul 2025 11:57:03 GMT - Info - Successfully connected to database  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:57:03 GMT - Info - 🔄 Product types cached:3  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:57:03 GMT - Info - ====================================  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:57:03 GMT - Info - Server is running on port: 5000  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:57:03 GMT - Info - Database connected successfully  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:57:03 GMT - Info - Cache loaded successfully  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:57:03 GMT - Info - /==================================/  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:58:21 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:58:21 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:58:21 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:58:21 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:59:38 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:59:43 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 11:59:51 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:00 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:05 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:06 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:18 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:18 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:18 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:18 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:21 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:23 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:23 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:23 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:23 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:35 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:36 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:36 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:36 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:36 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:00:42 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:01:06 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:01:09 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:01:38 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:01:43 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:01:44 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:01:59 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":0,"totalProducts":0}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:01:59 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:01:59 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:01:59 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:02:33 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:02:35 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:02:36 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:02:37 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  
+#--logger.service.ts--| Mon, 21 Jul 2025 12:02:40 GMT - Info - [controller -> getProducts] {"pageNum":1,"pageSize":10,"totalPages":2,"totalProducts":16}  

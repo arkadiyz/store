@@ -117,8 +117,8 @@ export function Table() {
           <button onClick={handleAdd} className='table-add-button'>
             הוסף מוצר חדש
           </button>
-          <button className='table-add-button' onClick={handleExitGame}>
-            יציאה מהמשחק
+          <button className='btn btn-delete btn-exit' onClick={handleExitGame}>
+            יציאה מהממשחק
           </button>
         </div>
 

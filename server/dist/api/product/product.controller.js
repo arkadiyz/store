@@ -19,7 +19,6 @@ exports.getProductTypes = getProductTypes;
 exports.searchProducts = searchProducts;
 const logger_service_1 = __importDefault(require("../../services/logger.service"));
 const product_service_1 = __importDefault(require("./product.service"));
-// TODO: Make Function to fetch products from service file
 function getProducts(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -32,7 +31,6 @@ function getProducts(req, res) {
         }
     });
 }
-// TODO: Make Function to save a product to service file
 function saveProduct(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -44,7 +42,6 @@ function saveProduct(req, res) {
         }
     });
 }
-//TODO: Make Function to delete a product from service file
 function deleteProduct(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {

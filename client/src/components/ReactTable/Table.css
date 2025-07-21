@@ -88,7 +88,16 @@
 }
 
 .table-search {
-  margin-bottom: 20px;  
+  margin-bottom: 20px;
   display: flex;
   justify-content: flex-start;
+}
+.btn-exit {
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
 }
