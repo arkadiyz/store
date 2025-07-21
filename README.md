@@ -30,7 +30,7 @@ cd store
 Create a `.env` file in the `server` directory with the following content:
 
 ```env
-DATABASE_URL="postgresql://postgres:admin123@localhost:5432/store_db"
+DATABASE_URL="postgresql://postgres:arkadi1990@localhost:5432/store_db"
 JWT_SECRET="your-super-secret-jwt-key-here"
 PORT=5000
 ```
@@ -38,7 +38,7 @@ PORT=5000
 **Connection Details:**
 
 - **Username:** `postgres`
-- **Password:** `admin123`
+- **Password:** `arkadi1990`
 - **Host:** `localhost`
 - **Port:** `5432`
 - **Database:** `store_db`
