@@ -38,7 +38,7 @@ PORT=5000
 **Connection Details:**
 
 - **Username:** `postgres`
-- **Password:** `admin123`
+- **Password:** `arkadi1990`
 - **Host:** `localhost`
 - **Port:** `5432`
 - **Database:** `store_db`
@@ -81,11 +81,13 @@ cd server
 npm install
 ```
 
-3. Push Prisma schema to database:
+3. Import the database schema and data:
 
 ```bash
-npx prisma db push
+psql -U postgres -d store_db -f ../schema.sql
 ```
+
+**Note:** The `schema.sql` file contains the complete database structure and sample data, so you don't need to run Prisma migrations or seed commands.
 
 4. Generate Prisma client:
 
@@ -93,13 +95,7 @@ npx prisma db push
 npx prisma generate
 ```
 
-5. Run seed file to populate initial data:
-
-```bash
-npm run seed
-```
-
-6. Start the development server:
+5. Start the development server:
 
 ```bash
 npm run dev
