@@ -18,12 +18,12 @@ export function Table() {
   const [editingProduct, setEditingProduct] = useState<Product | undefined>(undefined);
   const [products, setProducts] = useState<Product[]>([]);
 
-  const dispatch = useDispatch<AppDispatch>();
   const { pageStatus } = useSelector((state: RootState) => state.app);
 
   useEffect(() => {
     getProductsPage();
-  }, [pageStatus]);
+    console.log('Page status in Table:', pageStatus);
+  }, [pageStatus.pageNum, pageStatus.pageSize]);
 
   const getProductsPage = async () => {
     try {
@@ -85,65 +85,6 @@ export function Table() {
     setEditingProduct(undefined);
   };
 
-  // const columns: ColumnDef<Product>[] = [
-  //   {
-  //     accessorKey: 'id',
-  //     header: 'מזהה',
-  //     size: 80,
-  //   },
-
-  //   {
-  //     accessorKey: 'productName',
-  //     header: 'שם המוצר',
-  //     size: 150,
-  //   },
-  //   {
-  //     accessorKey: 'sku',
-  //     header: 'מק"ט',
-  //     size: 50,
-  //   },
-  //   {
-  //     accessorKey: 'productDescription',
-  //     header: 'תיאור מוצר',
-  //     size: 100,
-  //   },
-  //   {
-  //     accessorKey: 'productType',
-  //     header: 'סוג המוצר',
-  //     size: 120,
-  //     cell: ({ row }) => {
-  //       const type = getNameById(row.original.productTypeId);
-  //       return <>{type}</>;
-  //     },
-  //   },
-  //   {
-  //     accessorKey: 'marketedAt',
-  //     header: 'תאריך שיווק המוצר',
-  //     size: 100,
-  //     cell: ({ row }) => {
-  //       return <>{formatDate(row.original.marketedAt)}</>;
-  //     },
-  //   },
-  //   {
-  //     id: 'actions',
-  //     header: 'פעולות',
-  //     size: 120,
-  //     cell: ({ row }) => {
-  //       const product = row.original;
-  //       return (
-  //         <div className='action-buttons'>
-  //           <button onClick={() => handleEdit(product)} className='btn btn-edit'>
-  //             עריכה
-  //           </button>
-  //           <button onClick={() => handleDelete(product)} className='btn btn-delete'>
-  //             מחיקה
-  //           </button>
-  //         </div>
-  //       );
-  //     },
-  //   },
-  // ];
-
   return (
     <div className='table-container'>
       {/* Page Title */}
@@ -167,11 +108,9 @@ export function Table() {
           <DataTable
             data={products}
             columns={getColumns(handleEdit, handleDelete)}
-            // columns={columns}
             enableSorting={true}
             enableFiltering={true}
             enablePagination={true}
-            pageSize={5}
             className='product-table'
           />
         </div>

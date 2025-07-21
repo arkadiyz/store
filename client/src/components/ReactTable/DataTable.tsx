@@ -13,6 +13,8 @@ import { TableHeader } from './TableHeader';
 import { TableBody } from './TableBody';
 import { TablePagination } from './TablePagination';
 import './DataTable.css';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 interface DataTableProps<T> {
   data: T[];
@@ -31,13 +33,14 @@ export function DataTable<T>({
   enableSorting = true,
   enableFiltering = true,
   enablePagination = true,
-  pageSize = 10,
+  // pageSize = 10,
   className = '',
   onRowClick,
 }: DataTableProps<T>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [globalFilter, setGlobalFilter] = useState('');
+  const { pageSize } = useSelector((state: RootState) => state.app.pageStatus);
 
   const table = useReactTable({
     data,

@@ -7,13 +7,13 @@ import { getProductTypesFromCache } from '../../services/cache.service';
 // TODO: MAKE function to fetching products from a database
 async function getProducts(req: Request, res: Response): Promise<void> {
   try {
-    const { pageNum = 1, pageCount = 10 } = req.body;
+    const { pageNum = 1, pageSize = 10 } = req.body;
 
     // קבלת מוצרים מהמסד עם pagination
-    const skip = (pageNum - 1) * pageCount;
+    const skip = (pageNum - 1) * pageSize;
     const products = await prisma.product.findMany({
       skip,
-      take: pageCount,
+      take: pageSize,
       // include: {
       //   productType: true,
       // },
@@ -25,9 +25,9 @@ async function getProducts(req: Request, res: Response): Promise<void> {
     const resData = {
       products,
       pageNum,
-      pageCount,
+      pageSize,
       totalProducts,
-      totalPages: Math.ceil(totalProducts / pageCount),
+      totalPages: Math.ceil(totalProducts / pageSize),
     };
     res.status(200).json(resData);
   } catch (error) {

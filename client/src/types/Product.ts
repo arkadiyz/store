@@ -32,14 +32,16 @@ export interface LoaderState {
 }
 
 export type PageStatus = {
-  currentPage: number;
+  pageNum: number;
   pageSize: number;
+  totalPages: number;
+  totalProducts: number;
 };
 
 export type ProductsResponse = {
-  pageCount?: number;
-  pageNum?: number;
+  pageSize: number;
+  pageNum: number;
   products: Array<Product>;
-  totalPages?: number;
-  totalProducts?: number;
+  totalPages: number;
+  totalProducts: number;
 };

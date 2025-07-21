@@ -1,6 +1,7 @@
 import { PageStatus, Product, ProductFormData, ProductsResponse, ProductType } from '../types/Product';
 import { httpService } from './http.service';
-
+import { store } from '../redux/store';
+import { setStartPage } from '../redux/slices/appSlice';
 export async function getProductTypes() {
   try {
     const res = await httpService.get('/api/product/product-types');
@@ -32,6 +33,11 @@ export async function getProducts(pageStatus: PageStatus) {
   try {
     const res = await httpService.post<ProductsResponse>('/api/product', pageStatus);
     if (res && res.hasOwnProperty('products')) {
+      const pageStatus: PageStatus = { pageNum: res.pageNum, pageSize: res.pageSize, totalPages: res.totalPages, totalProducts: res.totalProducts };
+      console.log('Page status:', pageStatus);
+
+      store.dispatch(setStartPage(pageStatus));
+
       return res.products;
     } else {
       console.warn('Expected array of products, received:', res);
