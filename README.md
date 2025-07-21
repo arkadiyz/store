@@ -4,9 +4,9 @@ A full-stack application built with React + Node.js + TypeScript + Prisma + Post
 
 ## System Requirements
 
-- Node.js (version 16 or higher)
+- Node.js (version 18 or higher)
 - npm
-- PostgreSQL (version 12 or higher)
+- PostgreSQL (version 15 or higher)
 
 ## Project Setup
 
