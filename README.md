@@ -38,32 +38,10 @@ PORT=5000
 **Connection Details:**
 
 - **Username:** `postgres`
-- **Password:** `arkadi1990`
+- **Password:** `admin123`
 - **Host:** `localhost`
 - **Port:** `5432`
 - **Database:** `store_db`
-
-#### Database Schema
-
-The application uses the following database schema:
-
-```sql
--- ProductType table
-CREATE TABLE "ProductType" (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR UNIQUE NOT NULL
-);
-
--- Product table
-CREATE TABLE "Product" (
-  id SERIAL PRIMARY KEY,
-  "productName" VARCHAR(50) NOT NULL,
-  sku VARCHAR NOT NULL,
-  "productDescription" TEXT,
-  "productTypeId" INTEGER NOT NULL,
-  "marketedAt" TIMESTAMP DEFAULT (now() - interval '7 days')
-);
-```
 
 ## Installation & Setup
 
@@ -250,32 +228,6 @@ store/
 - **Data Tables:** TanStack React Table
 - **HTTP Client:** Axios
 - **Notifications:** React Toastify
-
-## Database Schema Details
-
-The application uses two main entities:
-
-### ProductType
-
-- `id` (Primary Key, Auto-increment)
-- `name` (Unique string)
-
-### Product
-
-- `id` (Primary Key, Auto-increment)
-- `productName` (String, max 50 characters)
-- `sku` (String)
-- `productDescription` (Optional text)
-- `productTypeId` (Foreign key to ProductType)
-- `marketedAt` (Timestamp, defaults to 7 days ago)
-
-### Seed Data
-
-The seed file populates the following ProductType entries:
-
-- ירק (Vegetable)
-- פרי (Fruit)
-- גידולי שדה (Field Crops)
 
 ## API Endpoints
 
