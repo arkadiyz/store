@@ -3,7 +3,7 @@ import { Product, ProductFormData, ProductType } from '../types/Product';
 import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
 import './ProductForm.css';
-import { getNameById, setDefoultDate } from '../services/utils';
+import { formatDateForInput, setDefoultDateForDisplay } from '../services/utils';
 
 interface ProductFormProps {
   product?: Product;
@@ -17,7 +17,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
     sku: '',
     productDescription: '',
     productTypeId: '',
-    marketedAt: setDefoultDate(), // ברירת מחדל - שבוע אחורה
+    marketedAt: setDefoultDateForDisplay(), // ברירת מחדל - שבוע אחורה
   });
   const { productTypes } = useSelector((state: RootState) => state.app);
 
@@ -179,15 +179,13 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
               type='date'
               id='marketDate'
               name='marketedAt'
-              // value={formData.marketedAt || setDefoultDate()}
-              value={formData.marketedAt ? new Date(formData.marketedAt).toISOString().split('T')[0] : setDefoultDate()}
+              value={formatDateForInput(formData.marketedAt)}
               onChange={handleChange}
               className={`product-form-input ${errors.marketedAt ? 'error' : ''}`}
             />
             {errors.marketedAt && <span className='product-form-error'>{errors.marketedAt}</span>}
           </div>
         </div>
-
         <div className='product-form-actions'>
           <button type='button' onClick={onCancel} className='product-form-button cancel'>
             ביטול

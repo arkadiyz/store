@@ -597,3 +597,75 @@ C:\Users\User\Desktop\React\store\server\api\product\product.service.ts:98:43
 Error occurred during query execution:
 ConnectorError(ConnectorError { user_facing_error: None, kind: QueryError(Error { kind: ToSql(1), cause: Some(Error { kind: ConversionError("Unable to fit integer value '122332232232' into an INT4 (32-bit signed integer)."), original_code: None, original_message: None }) }), transient: false })  
 #--logger.service.ts--| Mon, 21 Jul 2025 07:16:23 GMT - Info - Saving product: req.body {"productName":"שלום שלום שלום ושוב","sku":"1223322322","productDescription":"דשגדשגשדגשג","productTypeId":3,"marketedAt":"2025-07-14"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:18:19 GMT - Info - Saving product: req.body {"id":2,"productName":"יותר יפה לך ככה ","sku":4324324,"productDescription":"שינוי של תיאור ושם בדיקה ","productTypeId":3,"marketedAt":"2025-07-13T00:00:00.000Z"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:24:11 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:24:22 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:26:01 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:07 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:09 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:12 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:18 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:23 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:25 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:28 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:34 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:36 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:40 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:44 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:44 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:44 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:44 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:58 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:58 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:58 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:35:58 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:36:55 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:36:55 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:36:55 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:36:55 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:42:39 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:42:39 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:42:39 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:42:39 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:42:52 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:43:22 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:43:23 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:43:49 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:44:37 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:44:37 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:44:37 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:44:37 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:46:13 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:46:13 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:46:13 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:46:13 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:46:48 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:08 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:08 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:08 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:08 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:17 GMT - Info - Saving product: req.body {"id":1,"productName":"sdfsdfsdf","sku":123231,"productDescription":"qwesdfsfdsfsf","productTypeId":1,"marketedAt":"2025-07-26"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:39 GMT - Info - Saving product: req.body {"id":1,"productName":"בשיקה","sku":123231,"productDescription":"qwesdfsfdsfsf","productTypeId":1,"marketedAt":"2025-07-01"}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:41 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:41 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:41 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:41 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:42 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:42 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:42 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:42 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:43 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:43 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:43 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:47:43 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:50:56 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:50:56 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:50:56 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:50:56 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:54:39 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:54:41 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:54:42 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:56:58 GMT - Info - [controller -> getProducts] {"currentPage":1,"pageSize":10}  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:56:58 GMT - Info - [controller -> getProductTypes] Fetching product types  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:56:58 GMT - Info - typeof products: object  
+#--logger.service.ts--| Mon, 21 Jul 2025 07:56:58 GMT - Info - [controller -> getProductTypes --> ] Fetching product typesundefined  

@@ -16,12 +16,15 @@ export function formatDate(dateStr: string): string {
   return `${day}/${month}/${year}`;
 }
 
-export function setDefoultDate() {
-  const weekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-  return weekAgo.toISOString().split('T')[0]; // פורמט YYYY-MM-DD לשדה date
+export function setDefoultDateForDisplay(): string {
+  const date = new Date();
+  date.setDate(date.getDate() - 7);
+  return date.toISOString().split('T')[0];
 }
 
-// פונקציה נוספת אם נרצה פורמט DD/MM/YYYY להצגה
-export function setDefoultDateForDisplay() {
-  return formatDate(new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) + '');
+export function formatDateForInput(dateStr: string | undefined): string {
+  if (!dateStr) return setDefoultDateForDisplay();
+
+  const date = new Date(dateStr);
+  return isNaN(date.getTime()) ? setDefoultDateForDisplay() : date.toISOString().split('T')[0];
 }
