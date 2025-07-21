@@ -17,7 +17,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
     sku: '',
     productDescription: '',
     productTypeId: '',
-    marketedAt: setDefoultDateForDisplay(), // ברירת מחדל - שבוע אחורה
+    marketedAt: setDefoultDateForDisplay(),
   });
   const { productTypes } = useSelector((state: RootState) => state.app);
 
@@ -163,22 +163,6 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit, onC
             <label htmlFor='productType' className='product-form-label'>
               סוג המוצר *
             </label>
-            {/* <select
-              id='productType'
-              name='productType'
-              // value={getNameById(formData.productTypeId)}
-              value={formData.productTypeId}
-              onChange={handleChange}
-              className={`product-form-select ${errors.productTypeId ? 'error' : ''}`}
-            >
-              <option value=''>בחר סוג מוצר</option>
-              {Array.isArray(productTypes) &&
-                productTypes.map((type: ProductType) => (
-                  <option key={type.id} value={type.id}>
-                    {type.id} - {type.name}
-                  </option>
-                ))}
-            </select> */}
             <select
               id='productType'
               name='productTypeId'

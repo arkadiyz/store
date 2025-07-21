@@ -15,8 +15,8 @@ export function TableHeaderCell<T>({ header, enableSorting }: TableHeaderCellPro
           {enableSorting && header.column.getCanSort() && (
             <span className='table-sort-icon'>
               {{
-                asc: ' 🔼',
-                desc: ' 🔽',
+                asc: '↑',
+                desc: '↓',
               }[header.column.getIsSorted() as string] ?? ' ↕️'}
             </span>
           )}

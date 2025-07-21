@@ -2,7 +2,6 @@ import logger from '../../services/logger.service';
 import productService from './product.service';
 import { Request, Response } from 'express';
 
-// TODO: Make Function to fetch products from service file
 async function getProducts(req: Request, res: Response): Promise<void> {
   try {
     await productService.getProducts(req, res);
@@ -13,7 +12,6 @@ async function getProducts(req: Request, res: Response): Promise<void> {
   }
 }
 
-// TODO: Make Function to save a product to service file
 async function saveProduct(req: Request, res: Response): Promise<void> {
   try {
     await productService.saveProduct(req, res);
@@ -23,7 +21,6 @@ async function saveProduct(req: Request, res: Response): Promise<void> {
   }
 }
 
-//TODO: Make Function to delete a product from service file
 async function deleteProduct(req: Request, res: Response): Promise<void> {
   try {
     res.json({ message: 'Product deleted successfully' });

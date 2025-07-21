@@ -7,6 +7,6 @@ router.post('/', getProducts);
 router.get('/product-types', getProductTypes);
 router.post('/save', saveProduct);
 router.get('/delete/:id', deleteProduct);
-router.get('/search/:productName', searchProducts); // ✅ route חדש לחיפוש
+router.get('/search/:productName', searchProducts);
 
 export default router;
