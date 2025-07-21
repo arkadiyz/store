@@ -346,7 +346,7 @@ npm run build
 ### Server (.env)
 
 ```env
-DATABASE_URL="postgresql://postgres:admin123@localhost:5432/store_db"
+DATABASE_URL="postgresql://postgres:arkadi1990@localhost:5432/store_db"
 JWT_SECRET="your-super-secret-jwt-key-here"
 PORT=5000
 NODE_ENV=development
