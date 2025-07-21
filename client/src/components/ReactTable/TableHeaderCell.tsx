@@ -17,7 +17,7 @@ export function TableHeaderCell<T>({ header, enableSorting }: TableHeaderCellPro
               {{
                 asc: '↑',
                 desc: '↓',
-              }[header.column.getIsSorted() as string] ?? ' ↕️'}
+              }[header.column.getIsSorted() as string] ?? '↑↓'}
             </span>
           )}
         </div>
